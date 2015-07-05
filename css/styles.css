@@ -1,0 +1,15 @@
+
+
+body{
+  color: white;
+  background: black;
+}
+
+
+.headerWrapper{
+	background: url(../img/blackWood.jpg);
+}
+
+.footerWrapper{
+	background: url(../img/blackWood.jpg);
+}
