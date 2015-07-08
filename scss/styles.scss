@@ -1,0 +1,1289 @@
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+@mixin clearfix {
+  &:after { content: ""; display: table; clear: both; }
+}
+
+@mixin breakpoint($point) {
+    @media screen and ('min-width:' + $point) {
+        @content;
+    }
+}
+
+$green: #997f2b;
+$red: #a70307;
+$gray: #b2afaf;
+$blue: #83c0bf;
+
+$sans:'Oswald', sans-serif;
+$sans2: 'Myriad Pro Regular', sans-serif;
+$sans3: 'Caflisch Script Pro', 'Oswald', sans-serif;
+
+
+$small: 600px;
+$med: 900px;
+$large: 1024px;
+$xlarge: 1200px;
+
+
+
+
+
+
+
+
+
+
+
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+ 
+.clearfix:after {
+  clear: both;
+}
+ 
+.clearfix {
+  zoom: 1; /* ie 6/7 */
+}
+
+
+
+
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+
+
+
+
+
+
+
+/** tag styles **/
+
+
+body{
+  color: white;
+  background: black;
+  font-family: 'Oswald', sans-serif;
+}
+
+a {
+  color: #997f2b;
+  text-decoration: none;
+  display: block;
+  transition: all 0.5s ease;
+}
+
+a:hover{
+  color: $blue;
+}
+
+li{
+  list-style: none;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+}
+
+span{
+  color: #997f2b;
+}
+
+h1{
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
+  font-weight: 700;
+} 
+
+h3{
+  margin: 0;
+  padding: 0;
+  font-size: 1.3em;
+
+  @include breakpoint ($med){
+    font-size: 2em;
+  }
+
+  @include breakpoint ($xlarge){
+    font-size: 3em;
+  }
+}
+
+h4{
+  font-size: 1.2em;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+
+  @include breakpoint ($med){
+    font-size: 1.8em;
+  }
+
+  @include breakpoint ($xlarge){
+    font-size: 2.3em;
+  }
+}
+
+p{
+  font-size: 0.8em;
+  color: $gray;
+  // font-weight: 300;
+  font-family: $sans2;
+
+  @include breakpoint ($med){
+    font-size: 1em;
+  }
+
+  //  @include breakpoint ($xlarge){
+  //   font-size: 1.2em;
+  // }
+}
+
+
+
+
+/** Common Styles **/
+
+.mainWrapper{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.buttonBox{
+  border: 2px solid white;
+  padding: 2% 0;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+  background: black;
+  width: 40%;
+
+  &:hover{
+    background: $green;
+
+  a{
+      color: white;
+    }
+  
+  }
+
+  @include breakpoint ($small){
+    width: 40%;
+  }
+
+  @include breakpoint ($med){
+    width: 33%;
+  }
+
+  @include breakpoint ($large){
+    width: 30%;
+  }
+
+  @include breakpoint ($xlarge){
+    width: 28%;
+  }
+}
+
+.lgTitle {
+  font-size: 4em;
+
+  @include breakpoint ($med){
+    font-size: 5em;
+  }
+
+  @include breakpoint ($xlarge){
+    font-size: 6em;
+  }
+}
+
+.medTitle{
+  font-size: 3em;
+  line-height:1em;
+  color: white;
+
+  @include breakpoint ($med){
+    font-size: 4.5em;
+  }
+
+  @include breakpoint ($xlarge){
+    font-size: 5.5em;
+  }
+}
+
+
+
+
+
+
+
+
+/** header styles**/
+
+
+
+.headerWrapper{
+  background: url(../img/blackWood1.png);
+  background-position: center;
+  background-size: cover;
+  padding: 2% 0;
+}
+
+.headerLogo{
+  width: 70%;
+  margin: 0 auto;
+  img{
+    width: 100%;
+  }
+}
+
+.headerWrapper{
+  ul{
+    background: black;
+    padding: 5% 0;
+  }
+
+  li{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    transition: all 0.5s ease;
+  }
+
+  a{
+    color: white;
+
+    &:hover{
+      color: $blue;
+
+    }
+  }
+  
+}
+
+.main_navigation >.button{
+  text-align: center;
+  display: block;
+  font-size: 2em;
+
+  h5{
+    color: $green;
+    transition: all 0.5s ease;
+
+    &:hover{
+      color: $blue;
+    }
+  }
+}
+
+
+
+
+/** footer styles **/
+
+
+.footerWrapper{
+  border-top: 1px solid $gray;
+  background: url(../img/blackWood1.png);
+  background-position: center;
+  background-size: cover;
+  padding: 2% 5%;
+}
+
+// footer{
+//   @include breakpoint ($med){
+//     clear: both;
+
+//     p{
+//       font-size: 0.8em;
+//     }
+//   }
+
+//}
+
+.footerContact {
+  p{
+    text-align: center;
+    text-transform: uppercase;
+  }
+  span {
+    font-size: 1.3em;
+    font-weight: bolder;
+    color: $red;
+  }
+  
+  // @include breakpoint ($med){
+  //   float: left;
+  //   width: 60%;
+
+  //   p{
+  //     text-align: left;
+  //   }
+  // }
+}
+
+.footerNewsletter{
+  border: 2px solid white;
+  padding: 2% 4%;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  transition: all 0.5s ease;
+  background: black;
+
+  &:hover{
+    background: $green;
+
+    a{
+      color: white;
+    }
+  
+  }
+
+  @include breakpoint ($small){
+    width: 50%;
+    margin: 20px auto;
+  }
+
+  @include breakpoint ($med){
+    width: 40%;
+    padding: 1% 4%;
+  }
+
+  @include breakpoint ($large){
+    width: 38%;
+  }
+
+  @include breakpoint ($xlarge){
+    width: 32%;
+  }
+
+}
+
+// .mobileIcons{
+//   @include breakpoint ($med){
+//     display: none;
+//   }
+// }
+
+.iconBox{
+  text-align: center;
+}
+
+.icons{
+  width: 20%;
+  display: inline-block;
+
+  @include breakpoint ($small){
+    width: 12%;
+  }
+
+  @include breakpoint ($med){
+     width: 8%;
+  }
+
+  @include breakpoint ($large){
+    width: 6%;
+  }
+}
+
+.fb{
+  // text-align: right;
+  // margin-right: 5px;
+  // margin-left: 10px;
+
+  // @include breakpoint ($small){
+  //   margin-left: 28px;
+  // }
+}
+
+.siteIcons{
+  display: none;
+
+  // @include breakpoint ($med){
+  //   display: block;
+    
+  //   .icons{
+  //     width: 15%;
+  //     float: right;
+
+  //     @include breakpoint ($xlarge){
+  //       width: 20%;
+  //     }
+  //   }
+  // }
+}
+
+// .rightFooterside{
+//   @include breakpoint ($med){
+//     float: right;
+//     width: 40%;
+//   }
+
+//   @include breakpoint ($xlarge){
+//     width: 25%;
+//   }
+
+// }
+
+
+
+
+
+
+/** Events Page**/
+
+.Events{
+  background: url(../img/images/closeKnight_02.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 15% 5%;
+}
+
+
+.headerEvents{
+  @include breakpoint ($small){
+    .headerLogo{
+      width: 40%;
+    }
+  }
+}
+
+.mainWrapper > h1 > span{
+  font-size: 0.8em;
+
+  @include breakpoint ($med);
+    font-size: 1.2em;
+  }
+
+.eventBox {
+  border: 1px solid #b2afaf;
+  margin-top: 50px;
+  height: 295px;
+
+  p{
+    margin:0;
+    padding:0;
+  }
+
+  @include breakpoint ($med){
+    width: 49%;
+    float: left;
+    height: 320px;
+  }
+}
+
+.firstEvent{
+  @include breakpoint ($med){
+    margin-right: 2%;
+  }
+}
+
+.eventDate{
+  float: left;
+  width: 20%;
+  padding: 2% 4% 2% 17px;
+  border-right: 1px solid #b2afaf;
+}
+
+.eventTime{
+  float: left;
+  width: 20%;
+  padding: 2% 4% 2% 17px;
+}
+
+.eventInfo{
+  clear: both;
+  width: 100%;
+  border-top: 1px solid #b2afaf;
+  padding: 2% 4% 6% 17px;
+
+  @include breakpoint ($med){
+    padding: 6% 4% 6% 17px;
+  }
+}
+
+.iconMargin{
+  margin-top: 40px;
+
+  .icons{
+    width: 10%;
+
+    @include breakpoint ($small){
+      width: 7%;
+    }
+  
+    img{
+      width: 100%;
+    }
+  }
+}
+
+.firstBoxicons{
+  @include breakpoint ($med){
+    margin-top: 98px;
+  }
+}
+
+.reoccuring{
+  clear: both;
+
+  @include breakpoint ($med){
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.reoccuringBox{
+  border: 1px solid #b2afaf;
+  margin-top: 50px;
+  height: 295px;
+
+ p{
+    margin:0;
+    padding:0;
+  }
+  
+  @include breakpoint ($med){
+    height: 320px;
+  }
+  .eventInfo{
+    @include breakpoint ($med){
+      padding: 2% 4% 3% 17px;
+
+      .icons{
+        width: 3%;
+        margin-top: 20px;
+      }
+    }
+  }
+  
+}
+
+.smTitle{
+  font-size: 0.5em;
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
+}
+
+
+
+
+
+
+
+
+
+/** Onboarding Page **/
+
+.onboarding{
+  background-image: url(../img/darkWood.jpg);
+  background-position: top;
+  background-size: cover;
+  padding-top: 40px;
+  padding-bottom: 1px;
+
+  h1{
+    text-align: center;
+    font-size: 1em;
+
+    @include breakpoint ($small){
+      font-size: 1.5em;
+    }
+
+  }
+  .headerLogo{
+    margin: 0 auto 24% auto;
+
+    @include breakpoint ($small){
+      width: 50%;
+      margin: 0 auto 10% auto;
+    }
+
+    @include breakpoint ($med){
+      width: 30%;
+    }
+
+    @include breakpoint ($med){
+      margin: 0 auto 4% auto;
+    }
+  }
+}
+
+.line1 {
+  height: 1px;
+  width: 100%;
+  margin-bottom: 5px;
+  background: $gray; 
+}
+
+.line2 {
+  height: 1px;
+  width: 100%;
+  background: $gray; 
+  margin-bottom: 30px;
+}
+
+.line3 {
+  height: 1px;
+  width: 100%;
+  margin-bottom: 5px;
+  background: $gray; 
+}
+
+.line4 {
+  height: 1px;
+  width: 100%;
+  background: $gray; 
+  margin-bottom: 120px;
+}
+
+.yes{
+  // display: inline-block;
+  margin: 70px auto 0 auto;
+  width: 40%;
+  font-size: 2em;
+
+  @include breakpoint ($med){
+      width: 25%;
+    }
+
+  h1{
+    border: 1px solid white;
+    background: black;
+  }
+}
+
+.no{
+  // display: inline-block;
+  margin: 0 auto;
+  width: 40%;
+  font-size: 2em;
+  margin-bottom: 160px;
+
+  @include breakpoint ($small){
+      margin-bottom: 60px;
+    }
+
+  @include breakpoint ($med){
+      width: 25%;
+      margin-bottom: 100px;
+    }
+
+  @include breakpoint ($xlarge){
+      margin-bottom: 50px;
+  }
+
+  h1{
+    border: 1px solid white;
+    background: black;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** Home Page **/
+
+
+.home{
+  padding: 15% 5%;
+}
+  
+.findBeerAction{
+  background-image: url(../img/images/taps_01.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.tastingroomAction{
+  background-image: url(../img/homePouring.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.beerAction{
+  background-image: url(../img/homeBeers.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.eventsAction{
+  background-image: url(../img/homeEvents.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.locationAction{
+  background-image: url(../img/homeLocation.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.tapAction{
+  background-image: url(../img/homeTap.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.actions{
+  border: 1px solid $gray;
+  height: 220px;
+  padding: 8% 0 0 8%;
+  margin-bottom: 25px;
+
+  &:hover{
+    color: $blue;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** TASTING ROOM PAGE **/
+
+.tastingroom{ 
+  padding: 15% 5%;
+  background-image: url(../img/tastingroomMain.png);
+  // background-size: contain;
+  background-position: top right;
+  background-repeat: no-repeat;
+
+  // @include breakpoint ($xlarge){
+  //   padding: 10% 5% 15% 5%;
+  // }
+}
+
+.tastingroomWords{  
+  margin: 50px 0 100px 0;
+
+  @include breakpoint (447px){
+    margin: 100px 0 100px 0;
+  }
+
+  @include breakpoint ($med){
+    margin: 50px 0 50px 0;
+  }
+}
+
+.hours{
+  border: 1px solid white;
+  width: 275px;
+  margin-bottom: 200px;
+  p{
+    color: white;
+  }
+  
+  @include breakpoint ($med){
+    width: 325px;
+  }
+
+   @include breakpoint ($xlarge){
+    width: 400px;
+    p{
+      font-size: 1em;
+    }
+  } 
+}
+
+.day{
+  float: left;
+  width: 40%;
+  border-right: 1px solid white;
+  padding-left: 2%;
+}
+
+.hour{
+  float: left;
+  width: 60%;
+  padding-left: 2%;
+}
+
+.gray{
+  background: $gray;
+}
+
+.tap{
+  background-image: url(../img/treeRings2.png);
+  background-position: center right;
+  background-size: cover;
+  margin-bottom: 50px;
+
+  a{
+    line-height: 2em;
+  }
+}
+.current{
+  border: 1px solid $gray;
+  background: black;
+  padding: 5%;
+  margin: 10% 5% 0 5%;
+
+}
+
+.upcoming{
+  padding: 10%;
+}
+
+
+.leftList{
+  
+
+  @include breakpoint ($small){
+    width: 50%;
+    float: left;
+  }
+  
+}
+
+.rightList{
+
+
+  @include breakpoint ($small){
+    width: 50%;
+    float: left;
+  }
+}
+
+.callforEvents{
+  margin-bottom: 50px;
+  background-image: url(../img/images/grayWood_02.png);
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 10%;
+}
+
+.map{
+  border: 5px solid $green;
+  padding: 0;
+  margin:  0;
+}
+
+iframe{
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+
+
+/** About Us Page **/
+
+
+.aboutus{
+  padding: 10% 5%;
+  background-image: url(../img/images/grayWood_02.png);
+}
+
+.beerMugs{
+  width: 86%;
+  float: right;
+  margin: 3% 0 40px 5%;
+
+  img{
+    width: 100%;
+  }
+
+  @include breakpoint ($small){
+    width: 55%;
+  }
+
+  @include breakpoint ($med){
+    width: 45%;
+  }
+}
+
+.whoweare{
+  margin-top: 70px;
+
+  p{
+    line-height: 2em;
+  }
+}
+
+.logoCutout{
+  width: 50%;
+  margin:0 auto;
+  img{
+    width: 100%;
+  }
+}
+
+.historyQuote{
+  background-image: url(../img/blackWood.png);
+  background-size: cover;
+  background-position: top;
+  border-top: 1px solid $gray;
+  border-bottom: 1px solid $gray;
+  padding: 100px 0;
+  text-align: center;
+  font-family: $sans3;
+  font-size: 2em;
+  color: white;
+
+  @include breakpoint ($med){
+    font-size: 2.3em;
+  }
+
+  @include breakpoint ($large){
+    font-size: 2.6em;
+  }
+}
+
+.people{
+  margin-bottom: 70px;
+
+  p{
+    line-height: 2em;
+
+    @include breakpoint ($large){
+      float: left;
+      width: 55%;
+    }
+  }
+}
+
+.pic{
+  margin: 30px 0;
+  width: 100%;
+
+  img{
+    width: 100%;
+  }
+
+  @include breakpoint ($med){
+    width: 40%;
+    float: left;
+    margin: 30px 5% 5% 0;
+  }
+}
+
+.thankyou{
+  border-top: 1px solid $gray;
+  padding-top: 70px;
+  h3{
+    margin-bottom: 50px;
+    text-transform: uppercase;
+
+    @include breakpoint ($large){
+      font-size: 2em;
+    }
+  }
+
+  a{
+    margin-bottom: 15px;
+  }
+}
+
+
+
+
+
+
+/** Find Our Beers Page **/
+
+.findourbeers{
+  padding: 15% 5%;
+  background-image: url(../img/blackWood2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  h1{
+    span{
+      font-size: 0.8em;
+    }
+  }
+}
+
+form{
+  margin: 70px 0;
+
+  // input:last-child{
+  //   padding: 2% 12%;
+  //   background: black;
+  //   border: 1px solid white;
+  //   color: white;
+  // }
+}
+
+.formButton{
+  width: 40%;
+
+
+  input{
+    width: 100%;
+    padding: 5% 10%;
+    background: black;
+    border: 1px solid white;
+    color: $green;
+    font-family: $sans;
+    font-size: 1em;
+    transition: all 0.5s ease;
+    display: block;
+
+    &:hover{
+      background: $green;
+      color: white;
+    }
+  }
+
+   @include breakpoint ($small){
+    width: 30%;
+  }
+
+  @include breakpoint ($med){
+    width: 20%;
+  }
+}
+
+select{
+  background: $green;
+  border: none;
+  color: black;
+  display: inline-block;
+}
+
+input{
+  margin: 10px 5px;
+  color: black;
+  font-size: 1em;
+  padding: 1%;
+  background: $green;
+  border: none;
+  display: block;
+}
+
+.address{
+  width: 45%;
+  display: inline-block;
+  margin: 15px 1%;
+  vertical-align: top;
+
+  h4{
+    margin: 0;
+    padding: 0;
+  }
+  
+  p{
+    margin: 0;
+    padding: 0;
+  }
+
+  @include breakpoint ($small){
+    max-width: 25%;
+    margin: 15px 3%;
+  }
+
+  @include breakpoint ($med){
+    max-width: 18%;
+
+    h4{
+      font-size: 1.2em;
+    }
+
+    p{
+      font-size: 0.8em;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+/** Our Beers Page **/
+
+
+.ourbeers{
+  padding: 15% 5%;
+  background-image: url(../img/images/beerChartWood_03.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  p{
+    line-height: 2em;
+  }
+}
+
+.beerNav{
+  li{
+    margin-bottom: 30px;
+  }
+}
+
+.beersWrapper{
+  padding-left: 25%;
+}
+
+.beerGroup{
+  margin-top: 70px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid $gray;
+}
+
+.beerImage{
+  margin-top: 70px;
+  width: 50%;
+
+  img{
+    width: 100%;
+  }
+
+  @include breakpoint ($med){
+    width: 30%;
+    float: left;
+    margin-top: 110px;
+  }
+}
+
+.beerInfo{
+  border: 1px solid $gray;
+  margin: 10px 0 30px 0;
+
+  @include breakpoint ($med){
+    float: left;
+    width: 70%;
+    margin-top: 70px;
+  }
+}
+
+.beerTitle{
+  padding: 3%;
+  border-bottom: 1px solid $gray;
+
+  .medTitle{
+    font-size: 2.5em;
+  }
+
+  h3{
+    font-size: 1em;
+  }
+}
+
+.statTitle{
+  padding: 3%;
+  float: left;
+  width: 15%;
+  text-align: right;
+  padding: 3%;
+  color: $green;
+
+  li{
+    margin-bottom: 10px;
+  }
+
+  @include breakpoint ($med){
+    width: 15%
+  }
+}
+
+.statInfo{
+  padding: 3%;
+  float: left;
+  width: 80%;
+  border-left: 1px solid $gray;
+  li{
+    margin-bottom: 10px;
+  }
+
+  @include breakpoint ($med){
+    width: 79%
+  }
+
+  @include breakpoint ($med){
+    width: 39%;
+    border-right: 1px solid $gray;
+  }
+}
+
+.beerQuote{
+  padding: 3%;
+  clear: both;
+  border-top: 1px solid $gray;
+
+  @include breakpoint ($med){
+    width: 46%;
+    border-top: none;
+    float: left;
+    clear: none;
+  }
+}
+
+.beerWords{
+  @include breakpoint ($med){
+    clear: both;
+  }
+}
+

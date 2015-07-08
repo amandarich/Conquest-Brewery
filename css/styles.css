@@ -1,15 +1,785 @@
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table; }
 
+.clearfix:after {
+  clear: both; }
 
-body{
+.clearfix {
+  zoom: 1;
+  /* ie 6/7 */ }
+
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/** tag styles **/
+body {
   color: white;
   background: black;
-}
+  font-family: 'Oswald', sans-serif; }
 
+a {
+  color: #997f2b;
+  text-decoration: none;
+  display: block;
+  transition: all 0.5s ease; }
 
-.headerWrapper{
-	background: url(../img/blackWood.jpg);
-}
+a:hover {
+  color: #83c0bf; }
 
-.footerWrapper{
-	background: url(../img/blackWood.jpg);
-}
+li {
+  list-style: none; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+span {
+  color: #997f2b; }
+
+h1 {
+  margin: 0;
+  padding: 0;
+  line-height: 1em;
+  font-weight: 700; }
+
+h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.3em; }
+  @media screen and (min-width: 900px) {
+    h3 {
+      font-size: 2em; } }
+  @media screen and (min-width: 1200px) {
+    h3 {
+      font-size: 3em; } }
+
+h4 {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  font-weight: 400; }
+  @media screen and (min-width: 900px) {
+    h4 {
+      font-size: 1.8em; } }
+  @media screen and (min-width: 1200px) {
+    h4 {
+      font-size: 2.3em; } }
+
+p {
+  font-size: 0.8em;
+  color: #b2afaf;
+  font-family: "Myriad Pro Regular", sans-serif; }
+  @media screen and (min-width: 900px) {
+    p {
+      font-size: 1em; } }
+
+/** Common Styles **/
+.mainWrapper {
+  max-width: 1200px;
+  margin: 0 auto; }
+
+.buttonBox {
+  border: 2px solid white;
+  padding: 2% 0;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  transition: all 0.5s ease;
+  background: black;
+  width: 40%; }
+  .buttonBox:hover {
+    background: #997f2b; }
+    .buttonBox:hover a {
+      color: white; }
+  @media screen and (min-width: 600px) {
+    .buttonBox {
+      width: 40%; } }
+  @media screen and (min-width: 900px) {
+    .buttonBox {
+      width: 33%; } }
+  @media screen and (min-width: 1024px) {
+    .buttonBox {
+      width: 30%; } }
+  @media screen and (min-width: 1200px) {
+    .buttonBox {
+      width: 28%; } }
+
+.lgTitle {
+  font-size: 4em; }
+  @media screen and (min-width: 900px) {
+    .lgTitle {
+      font-size: 5em; } }
+  @media screen and (min-width: 1200px) {
+    .lgTitle {
+      font-size: 6em; } }
+
+.medTitle {
+  font-size: 3em;
+  line-height: 1em;
+  color: white; }
+  @media screen and (min-width: 900px) {
+    .medTitle {
+      font-size: 4.5em; } }
+  @media screen and (min-width: 1200px) {
+    .medTitle {
+      font-size: 5.5em; } }
+
+/** header styles**/
+.headerWrapper {
+  background: url(../img/blackWood1.png);
+  background-position: center;
+  background-size: cover;
+  padding: 2% 0; }
+
+.headerLogo {
+  width: 70%;
+  margin: 0 auto; }
+  .headerLogo img {
+    width: 100%; }
+
+.headerWrapper ul {
+  background: black;
+  padding: 5% 0; }
+.headerWrapper li {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+  transition: all 0.5s ease; }
+.headerWrapper a {
+  color: white; }
+  .headerWrapper a:hover {
+    color: #83c0bf; }
+
+.main_navigation > .button {
+  text-align: center;
+  display: block;
+  font-size: 2em; }
+  .main_navigation > .button h5 {
+    color: #997f2b;
+    transition: all 0.5s ease; }
+    .main_navigation > .button h5:hover {
+      color: #83c0bf; }
+
+/** footer styles **/
+.footerWrapper {
+  border-top: 1px solid #b2afaf;
+  background: url(../img/blackWood1.png);
+  background-position: center;
+  background-size: cover;
+  padding: 2% 5%; }
+
+.footerContact p {
+  text-align: center;
+  text-transform: uppercase; }
+.footerContact span {
+  font-size: 1.3em;
+  font-weight: bolder;
+  color: #a70307; }
+
+.footerNewsletter {
+  border: 2px solid white;
+  padding: 2% 4%;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  transition: all 0.5s ease;
+  background: black; }
+  .footerNewsletter:hover {
+    background: #997f2b; }
+    .footerNewsletter:hover a {
+      color: white; }
+  @media screen and (min-width: 600px) {
+    .footerNewsletter {
+      width: 50%;
+      margin: 20px auto; } }
+  @media screen and (min-width: 900px) {
+    .footerNewsletter {
+      width: 40%;
+      padding: 1% 4%; } }
+  @media screen and (min-width: 1024px) {
+    .footerNewsletter {
+      width: 38%; } }
+  @media screen and (min-width: 1200px) {
+    .footerNewsletter {
+      width: 32%; } }
+
+.iconBox {
+  text-align: center; }
+
+.icons {
+  width: 20%;
+  display: inline-block; }
+  @media screen and (min-width: 600px) {
+    .icons {
+      width: 12%; } }
+  @media screen and (min-width: 900px) {
+    .icons {
+      width: 8%; } }
+  @media screen and (min-width: 1024px) {
+    .icons {
+      width: 6%; } }
+
+.siteIcons {
+  display: none; }
+
+/** Events Page**/
+.Events {
+  background: url(../img/images/closeKnight_02.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 15% 5%; }
+
+@media screen and (min-width: 600px) {
+  .headerEvents .headerLogo {
+    width: 40%; } }
+
+.mainWrapper > h1 > span {
+  font-size: 0.8em;
+  font-size: 1.2em; }
+
+.eventBox {
+  border: 1px solid #b2afaf;
+  margin-top: 50px;
+  height: 295px; }
+  .eventBox p {
+    margin: 0;
+    padding: 0; }
+  @media screen and (min-width: 900px) {
+    .eventBox {
+      width: 49%;
+      float: left;
+      height: 320px; } }
+
+@media screen and (min-width: 900px) {
+  .firstEvent {
+    margin-right: 2%; } }
+
+.eventDate {
+  float: left;
+  width: 20%;
+  padding: 2% 4% 2% 17px;
+  border-right: 1px solid #b2afaf; }
+
+.eventTime {
+  float: left;
+  width: 20%;
+  padding: 2% 4% 2% 17px; }
+
+.eventInfo {
+  clear: both;
+  width: 100%;
+  border-top: 1px solid #b2afaf;
+  padding: 2% 4% 6% 17px; }
+  @media screen and (min-width: 900px) {
+    .eventInfo {
+      padding: 6% 4% 6% 17px; } }
+
+.iconMargin {
+  margin-top: 40px; }
+  .iconMargin .icons {
+    width: 10%; }
+    @media screen and (min-width: 600px) {
+      .iconMargin .icons {
+        width: 7%; } }
+    .iconMargin .icons img {
+      width: 100%; }
+
+@media screen and (min-width: 900px) {
+  .firstBoxicons {
+    margin-top: 98px; } }
+
+.reoccuring {
+  clear: both; }
+  @media screen and (min-width: 900px) {
+    .reoccuring {
+      width: 100%;
+      margin: 0 auto; } }
+
+.reoccuringBox {
+  border: 1px solid #b2afaf;
+  margin-top: 50px;
+  height: 295px; }
+  .reoccuringBox p {
+    margin: 0;
+    padding: 0; }
+  @media screen and (min-width: 900px) {
+    .reoccuringBox {
+      height: 320px; } }
+  @media screen and (min-width: 900px) {
+    .reoccuringBox .eventInfo {
+      padding: 2% 4% 3% 17px; }
+      .reoccuringBox .eventInfo .icons {
+        width: 3%;
+        margin-top: 20px; } }
+
+.smTitle {
+  font-size: 0.5em;
+  margin: 0;
+  padding: 0;
+  line-height: 1em; }
+
+/** Onboarding Page **/
+.onboarding {
+  background-image: url(../img/darkWood.jpg);
+  background-position: top;
+  background-size: cover;
+  padding-top: 40px;
+  padding-bottom: 1px; }
+  .onboarding h1 {
+    text-align: center;
+    font-size: 1em; }
+    @media screen and (min-width: 600px) {
+      .onboarding h1 {
+        font-size: 1.5em; } }
+  .onboarding .headerLogo {
+    margin: 0 auto 24% auto; }
+    @media screen and (min-width: 600px) {
+      .onboarding .headerLogo {
+        width: 50%;
+        margin: 0 auto 10% auto; } }
+    @media screen and (min-width: 900px) {
+      .onboarding .headerLogo {
+        width: 30%; } }
+    @media screen and (min-width: 900px) {
+      .onboarding .headerLogo {
+        margin: 0 auto 4% auto; } }
+
+.line1 {
+  height: 1px;
+  width: 100%;
+  margin-bottom: 5px;
+  background: #b2afaf; }
+
+.line2 {
+  height: 1px;
+  width: 100%;
+  background: #b2afaf;
+  margin-bottom: 30px; }
+
+.line3 {
+  height: 1px;
+  width: 100%;
+  margin-bottom: 5px;
+  background: #b2afaf; }
+
+.line4 {
+  height: 1px;
+  width: 100%;
+  background: #b2afaf;
+  margin-bottom: 120px; }
+
+.yes {
+  margin: 70px auto 0 auto;
+  width: 40%;
+  font-size: 2em; }
+  @media screen and (min-width: 900px) {
+    .yes {
+      width: 25%; } }
+  .yes h1 {
+    border: 1px solid white;
+    background: black; }
+
+.no {
+  margin: 0 auto;
+  width: 40%;
+  font-size: 2em;
+  margin-bottom: 160px; }
+  @media screen and (min-width: 600px) {
+    .no {
+      margin-bottom: 60px; } }
+  @media screen and (min-width: 900px) {
+    .no {
+      width: 25%;
+      margin-bottom: 100px; } }
+  @media screen and (min-width: 1200px) {
+    .no {
+      margin-bottom: 50px; } }
+  .no h1 {
+    border: 1px solid white;
+    background: black; }
+
+/** Home Page **/
+.home {
+  padding: 15% 5%; }
+
+.findBeerAction {
+  background-image: url(../img/images/taps_01.png);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.tastingroomAction {
+  background-image: url(../img/homePouring.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.beerAction {
+  background-image: url(../img/homeBeers.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.eventsAction {
+  background-image: url(../img/homeEvents.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.locationAction {
+  background-image: url(../img/homeLocation.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+
+.tapAction {
+  background-image: url(../img/homeTap.png);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.actions {
+  border: 1px solid #b2afaf;
+  height: 220px;
+  padding: 8% 0 0 8%;
+  margin-bottom: 25px; }
+  .actions:hover {
+    color: #83c0bf; }
+
+/** TASTING ROOM PAGE **/
+.tastingroom {
+  padding: 15% 5%;
+  background-image: url(../img/tastingroomMain.png);
+  background-position: top right;
+  background-repeat: no-repeat; }
+
+.tastingroomWords {
+  margin: 50px 0 100px 0; }
+  @media screen and (min-width: 447px) {
+    .tastingroomWords {
+      margin: 100px 0 100px 0; } }
+  @media screen and (min-width: 900px) {
+    .tastingroomWords {
+      margin: 50px 0 50px 0; } }
+
+.hours {
+  border: 1px solid white;
+  width: 275px;
+  margin-bottom: 200px; }
+  .hours p {
+    color: white; }
+  @media screen and (min-width: 900px) {
+    .hours {
+      width: 325px; } }
+  @media screen and (min-width: 1200px) {
+    .hours {
+      width: 400px; }
+      .hours p {
+        font-size: 1em; } }
+
+.day {
+  float: left;
+  width: 40%;
+  border-right: 1px solid white;
+  padding-left: 2%; }
+
+.hour {
+  float: left;
+  width: 60%;
+  padding-left: 2%; }
+
+.gray {
+  background: #b2afaf; }
+
+.tap {
+  background-image: url(../img/treeRings2.png);
+  background-position: center right;
+  background-size: cover;
+  margin-bottom: 50px; }
+  .tap a {
+    line-height: 2em; }
+
+.current {
+  border: 1px solid #b2afaf;
+  background: black;
+  padding: 5%;
+  margin: 10% 5% 0 5%; }
+
+.upcoming {
+  padding: 10%; }
+
+@media screen and (min-width: 600px) {
+  .leftList {
+    width: 50%;
+    float: left; } }
+
+@media screen and (min-width: 600px) {
+  .rightList {
+    width: 50%;
+    float: left; } }
+
+.callforEvents {
+  margin-bottom: 50px;
+  background-image: url(../img/images/grayWood_02.png);
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 10%; }
+
+.map {
+  border: 5px solid #997f2b;
+  padding: 0;
+  margin: 0; }
+
+iframe {
+  margin: 0;
+  padding: 0; }
+
+/** About Us Page **/
+.aboutus {
+  padding: 10% 5%;
+  background-image: url(../img/images/grayWood_02.png); }
+
+.beerMugs {
+  width: 86%;
+  float: right;
+  margin: 3% 0 40px 5%; }
+  .beerMugs img {
+    width: 100%; }
+  @media screen and (min-width: 600px) {
+    .beerMugs {
+      width: 55%; } }
+  @media screen and (min-width: 900px) {
+    .beerMugs {
+      width: 45%; } }
+
+.whoweare {
+  margin-top: 70px; }
+  .whoweare p {
+    line-height: 2em; }
+
+.logoCutout {
+  width: 50%;
+  margin: 0 auto; }
+  .logoCutout img {
+    width: 100%; }
+
+.historyQuote {
+  background-image: url(../img/blackWood.png);
+  background-size: cover;
+  background-position: top;
+  border-top: 1px solid #b2afaf;
+  border-bottom: 1px solid #b2afaf;
+  padding: 100px 0;
+  text-align: center;
+  font-family: "Caflisch Script Pro", "Oswald", sans-serif;
+  font-size: 2em;
+  color: white; }
+  @media screen and (min-width: 900px) {
+    .historyQuote {
+      font-size: 2.3em; } }
+  @media screen and (min-width: 1024px) {
+    .historyQuote {
+      font-size: 2.6em; } }
+
+.people {
+  margin-bottom: 70px; }
+  .people p {
+    line-height: 2em; }
+    @media screen and (min-width: 1024px) {
+      .people p {
+        float: left;
+        width: 55%; } }
+
+.pic {
+  margin: 30px 0;
+  width: 100%; }
+  .pic img {
+    width: 100%; }
+  @media screen and (min-width: 900px) {
+    .pic {
+      width: 40%;
+      float: left;
+      margin: 30px 5% 5% 0; } }
+
+.thankyou {
+  border-top: 1px solid #b2afaf;
+  padding-top: 70px; }
+  .thankyou h3 {
+    margin-bottom: 50px;
+    text-transform: uppercase; }
+    @media screen and (min-width: 1024px) {
+      .thankyou h3 {
+        font-size: 2em; } }
+  .thankyou a {
+    margin-bottom: 15px; }
+
+/** Find Our Beers Page **/
+.findourbeers {
+  padding: 15% 5%;
+  background-image: url(../img/blackWood2.png);
+  background-position: center;
+  background-repeat: no-repeat; }
+  .findourbeers h1 span {
+    font-size: 0.8em; }
+
+form {
+  margin: 70px 0; }
+
+.formButton {
+  width: 40%; }
+  .formButton input {
+    width: 100%;
+    padding: 5% 10%;
+    background: black;
+    border: 1px solid white;
+    color: #997f2b;
+    font-family: "Oswald", sans-serif;
+    font-size: 1em;
+    transition: all 0.5s ease;
+    display: block; }
+    .formButton input:hover {
+      background: #997f2b;
+      color: white; }
+  @media screen and (min-width: 600px) {
+    .formButton {
+      width: 30%; } }
+  @media screen and (min-width: 900px) {
+    .formButton {
+      width: 20%; } }
+
+select {
+  background: #997f2b;
+  border: none;
+  color: black;
+  display: inline-block; }
+
+input {
+  margin: 10px 5px;
+  color: black;
+  font-size: 1em;
+  padding: 1%;
+  background: #997f2b;
+  border: none;
+  display: block; }
+
+.address {
+  width: 45%;
+  display: inline-block;
+  margin: 15px 1%;
+  vertical-align: top; }
+  .address h4 {
+    margin: 0;
+    padding: 0; }
+  .address p {
+    margin: 0;
+    padding: 0; }
+  @media screen and (min-width: 600px) {
+    .address {
+      max-width: 25%;
+      margin: 15px 3%; } }
+  @media screen and (min-width: 900px) {
+    .address {
+      max-width: 18%; }
+      .address h4 {
+        font-size: 1.2em; }
+      .address p {
+        font-size: 0.8em; } }
+
+/** Our Beers Page **/
+.ourbeers {
+  padding: 15% 5%;
+  background-image: url(../img/images/beerChartWood_03.png);
+  background-repeat: no-repeat;
+  background-size: cover; }
+  .ourbeers p {
+    line-height: 2em; }
+
+.beerNav li {
+  margin-bottom: 30px; }
+
+.beersWrapper {
+  padding-left: 25%; }
+
+.beerGroup {
+  margin-top: 70px;
+  padding-bottom: 50px;
+  border-bottom: 1px solid #b2afaf; }
+
+.beerImage {
+  margin-top: 70px;
+  width: 50%; }
+  .beerImage img {
+    width: 100%; }
+  @media screen and (min-width: 900px) {
+    .beerImage {
+      width: 30%;
+      float: left;
+      margin-top: 110px; } }
+
+.beerInfo {
+  border: 1px solid #b2afaf;
+  margin: 10px 0 30px 0; }
+  @media screen and (min-width: 900px) {
+    .beerInfo {
+      float: left;
+      width: 70%;
+      margin-top: 70px; } }
+
+.beerTitle {
+  padding: 3%;
+  border-bottom: 1px solid #b2afaf; }
+  .beerTitle .medTitle {
+    font-size: 2.5em; }
+  .beerTitle h3 {
+    font-size: 1em; }
+
+.statTitle {
+  padding: 3%;
+  float: left;
+  width: 15%;
+  text-align: right;
+  padding: 3%;
+  color: #997f2b; }
+  .statTitle li {
+    margin-bottom: 10px; }
+  @media screen and (min-width: 900px) {
+    .statTitle {
+      width: 15%; } }
+
+.statInfo {
+  padding: 3%;
+  float: left;
+  width: 80%;
+  border-left: 1px solid #b2afaf; }
+  .statInfo li {
+    margin-bottom: 10px; }
+  @media screen and (min-width: 900px) {
+    .statInfo {
+      width: 79%; } }
+  @media screen and (min-width: 900px) {
+    .statInfo {
+      width: 39%;
+      border-right: 1px solid #b2afaf; } }
+
+.beerQuote {
+  padding: 3%;
+  clear: both;
+  border-top: 1px solid #b2afaf; }
+  @media screen and (min-width: 900px) {
+    .beerQuote {
+      width: 46%;
+      border-top: none;
+      float: left;
+      clear: none; } }
+
+@media screen and (min-width: 900px) {
+  .beerWords {
+    clear: both; } }
+
+/*# sourceMappingURL=styles.css.map */
