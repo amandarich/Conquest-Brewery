@@ -29,7 +29,7 @@
 			<div class="headerWrapper">
 
 				<div class="headerLogo">
-					<a href="index.html">
+					<a href="homepage.php">
 						<img src="img/conquest-logo.png">
 					</a>
 				</div>
@@ -38,12 +38,21 @@
 						<h5>Menu</h5>
 					</a>
 						<ul class="clearfix main_nav">
-							<li><a href="index.html">HOME</a></li>
-							<li><a href="tastingroom.html">TASTING ROOM</a></li>
-							<li><a href="ourbeers.html">CONQUEST BEERS</a></li>
-							<li><a href="aboutus.html">ABOUT CONQUEST</a></li>
+							<li class="left"><a href="homepage.php">HOME</a></li>
+							<li class="left"><a href="tastingroom.php">TASTING ROOM</a></li>
+							<li class="right"><a href="ourbeers.php">OUR BEERS</a></li>
+							<li class="right"><a href="aboutus.php">ABOUT US</a></li>
 						</ul>
 				</nav>
 
+
+
 			</div>    <!--End .headerWrapper div-->
 		</header>
+
+
+
+
+
+
+

@@ -72,7 +72,7 @@ h4 {
       font-size: 2.3em; } }
 
 p {
-  font-size: 0.8em;
+  font-size: 1em;
   color: #b2afaf;
   font-family: "Myriad Pro Regular", sans-serif; }
   @media screen and (min-width: 900px) {
@@ -82,18 +82,19 @@ p {
 /** Common Styles **/
 .mainWrapper {
   max-width: 1200px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  z-index: 1000; }
 
 .buttonBox {
-  border: 2px solid white;
-  padding: 2% 0;
+  border: 2px solid #5f5d5d;
+  padding: 4% 0;
   text-align: center;
   margin-bottom: 20px;
   margin-top: 20px;
   text-transform: uppercase;
   transition: all 0.5s ease;
   background: black;
-  width: 40%; }
+  width: 50%; }
   .buttonBox:hover {
     background: #997f2b; }
     .buttonBox:hover a {
@@ -132,34 +133,232 @@ p {
       font-size: 5.5em; } }
 
 /** header styles**/
-.headerWrapper {
-  background: url(../img/blackWood1.png);
-  background-position: center;
+.cb-slideshow,
+.cb-slideshow:after {
+  width: 100%;
+  height: 600px;
+  top: 106px;
+  left: 0px;
+  z-index: 0; }
+
+.onboarding .cb-slideshow,
+.onboarding .cb-slideshow:after {
+  height: 100%; }
+
+.cb-slideshow:after {
+  content: ''; }
+
+.cb-slideshow li span {
+  width: 100%;
+  height: 650px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
   background-size: cover;
-  padding: 2% 0; }
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 36s linear infinite 0s; }
+  @media screen and (min-width: 900px) {
+    .cb-slideshow li span {
+      height: 700px;
+      top: 100px; } }
+
+.onboarding .cb-slideshow li span {
+  height: 100%;
+  top: 0px; }
+
+.cb-slideshow li div {
+  z-index: 0;
+  position: absolute;
+  bottom: 30px;
+  left: 0px;
+  width: 100%;
+  text-align: center;
+  opacity: 0;
+  color: #fff;
+  animation: titleAnimation 36s linear infinite 0s; }
+
+.cb-slideshow li div h3 {
+  font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+  font-size: 240px;
+  padding: 0;
+  line-height: 200px; }
+
+.cb-slideshow li:nth-child(1) span {
+  background-image: url(../img/brewery2.jpg); }
+
+.cb-slideshow li:nth-child(2) span {
+  background-image: url(../img/conquestPeople2.jpg);
+  animation-delay: 6s; }
+
+.cb-slideshow li:nth-child(3) span {
+  background-image: url(../img/brewery1.jpg);
+  animation-delay: 12s; }
+
+.cb-slideshow li:nth-child(4) span {
+  background-image: url(../img/conquestPeople.png);
+  animation-delay: 18s; }
+
+.cb-slideshow li:nth-child(5) span {
+  background-image: url(../img/conquestBottles.jpg);
+  animation-delay: 24s; }
+
+.cb-slideshow li:nth-child(6) span {
+  background-image: url(../img/brewery4.jpg);
+  animation-delay: 30s; }
+
+.cb-slideshow li:nth-child(2) div {
+  animation-delay: 6s; }
+
+.cb-slideshow li:nth-child(3) div {
+  animation-delay: 12s; }
+
+.cb-slideshow li:nth-child(4) div {
+  animation-delay: 18s; }
+
+.cb-slideshow li:nth-child(5) div {
+  animation-delay: 24s; }
+
+.cb-slideshow li:nth-child(6) div {
+  animation-delay: 30s; }
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in; }
+  8% {
+    opacity: 1;
+    animation-timing-function: ease-out; }
+  17% {
+    opacity: 1; }
+  25% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+@keyframes titleAnimation {
+  0% {
+    opacity: 0; }
+  8% {
+    opacity: 1; }
+  17% {
+    opacity: 1; }
+  19% {
+    opacity: 0; }
+  100% {
+    opacity: 0; } }
+.no-cssanimations .cb-slideshow li span {
+  opacity: 1; }
+
+@media screen and (max-width: 1140px) {
+  .cb-slideshow li div h3 {
+    font-size: 140px; } }
+@media screen and (max-width: 600px) {
+  .cb-slideshow li div h3 {
+    font-size: 80px; } }
+.homepage .headerWrapper {
+  height: 500px;
+  z-index: 1000; }
 
 .headerLogo {
   width: 70%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: absolute;
+  top: 20px;
+  right: 14%; }
   .headerLogo img {
     width: 100%; }
+  @media screen and (min-width: 600px) {
+    .headerLogo {
+      width: 50%;
+      right: 24%; } }
+  @media screen and (min-width: 900px) {
+    .headerLogo {
+      width: 25%;
+      top: 25px;
+      right: 37%;
+      z-index: 1000; } }
+  @media screen and (min-width: 1200px) {
+    .headerLogo {
+      width: 22%;
+      right: 39%; } }
+
+@media screen and (min-width: 900px) {
+  .button h5 {
+    display: none; } }
 
 .headerWrapper ul {
-  background: black;
-  padding: 5% 0; }
+  padding: 8% 0;
+  text-align: center; }
 .headerWrapper li {
-  width: 100%;
   text-align: center;
   margin-bottom: 15px;
-  transition: all 0.5s ease; }
+  transition: all 0.5s ease;
+  display: inline-block;
+  margin: 0 3%; }
 .headerWrapper a {
   color: white; }
   .headerWrapper a:hover {
     color: #83c0bf; }
+.headerWrapper .main_navigation {
+  position: fixed;
+  background: rgba(153, 127, 43, 0.9);
+  border-top: 1px solid #b2afaf;
+  border-bottom: 1px solid #b2afaf;
+  width: 100%;
+  bottom: 0px; }
+@media screen and (min-width: 600px) {
+  .headerWrapper ul {
+    padding: 5% 0; }
+  .headerWrapper li {
+    margin: 0 6%; } }
+@media screen and (min-width: 900px) {
+  .headerWrapper .main_navigation {
+    background: url(../img/blackWood1.png);
+    background-position: center 530px;
+    position: absolute;
+    border-top: none;
+    top: 0px;
+    width: 100%;
+    height: 120px; }
+  .headerWrapper ul {
+    background: none;
+    padding: 5% 0;
+    text-align: center; }
+  .headerWrapper li {
+    display: inline-block;
+    margin-bottom: 0;
+    margin: 0 7%; }
+  .headerWrapper li:nth-child(2) {
+    margin-right: 10%; }
+  .headerWrapper li:nth-child(3) {
+    margin-left: 11%; } }
+@media screen and (min-width: 1024px) {
+  .headerWrapper li:nth-child(2) {
+    margin-right: 12%; }
+  .headerWrapper li:nth-child(3) {
+    margin-left: 12%; } }
+@media screen and (min-width: 1200px) {
+  .headerWrapper ul {
+    padding: 4% 0; }
+  .headerWrapper li:nth-child(2) {
+    margin-right: 16%; }
+  .headerWrapper li:nth-child(3) {
+    margin-left: 13%; } }
+
+@media screen and (min-width: 900px) {
+  .left {
+    text-align: left; } }
+
+@media screen and (min-width: 900px) {
+  .right {
+    text-align: right; } }
 
 .main_navigation > .button {
   text-align: center;
-  display: block;
+  display: none;
   font-size: 2em; }
   .main_navigation > .button h5 {
     color: #997f2b;
@@ -169,62 +368,82 @@ p {
 
 /** footer styles **/
 .footerWrapper {
-  border-top: 1px solid #b2afaf;
+  border-top: 1px solid #5f5d5d;
   background: url(../img/blackWood1.png);
-  background-position: center;
+  background-position: center 0;
   background-size: cover;
-  padding: 2% 5%; }
+  padding: 2% 5% 17% 5%; }
+  @media screen and (min-width: 900px) {
+    .footerWrapper {
+      padding: 2% 5%; } }
 
-.footerContact p {
-  text-align: center;
-  text-transform: uppercase; }
 .footerContact span {
   font-size: 1.3em;
   font-weight: bolder;
   color: #a70307; }
 
+.footerAddress p {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.8em; }
+  @media screen and (min-width: 900px) {
+    .footerAddress p {
+      text-align: left; } }
+@media screen and (min-width: 900px) {
+  .footerAddress {
+    float: left;
+    width: 50%; } }
+
+.footerEmail p {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.8em; }
+  @media screen and (min-width: 900px) {
+    .footerEmail p {
+      text-align: right; } }
+@media screen and (min-width: 900px) {
+  .footerEmail {
+    float: left;
+    width: 50%;
+    text-align: left; } }
+
+.footerButton {
+  width: 75%;
+  margin: 0 auto; }
+  @media screen and (min-width: 600px) {
+    .footerButton {
+      width: 50%; } }
+  @media screen and (min-width: 900px) {
+    .footerButton {
+      width: 35%; } }
+  @media screen and (min-width: 1200px) {
+    .footerButton {
+      width: 25%; } }
+
 .footerNewsletter {
-  border: 2px solid white;
-  padding: 2% 4%;
+  border: 2px solid #5f5d5d;
+  padding: 3% 4%;
   text-align: center;
   margin-bottom: 20px;
   margin-top: 20px;
   transition: all 0.5s ease;
-  background: black; }
+  background: black;
+  width: 100%; }
   .footerNewsletter:hover {
     background: #997f2b; }
     .footerNewsletter:hover a {
       color: white; }
-  @media screen and (min-width: 600px) {
-    .footerNewsletter {
-      width: 50%;
-      margin: 20px auto; } }
-  @media screen and (min-width: 900px) {
-    .footerNewsletter {
-      width: 40%;
-      padding: 1% 4%; } }
-  @media screen and (min-width: 1024px) {
-    .footerNewsletter {
-      width: 38%; } }
-  @media screen and (min-width: 1200px) {
-    .footerNewsletter {
-      width: 32%; } }
 
 .iconBox {
-  text-align: center; }
+  text-align: center;
+  margin: 0 auto; }
+  @media screen and (min-width: 900px) {
+    .iconBox {
+      clear: both; } }
 
 .icons {
-  width: 20%;
-  display: inline-block; }
-  @media screen and (min-width: 600px) {
-    .icons {
-      width: 12%; } }
-  @media screen and (min-width: 900px) {
-    .icons {
-      width: 8%; } }
-  @media screen and (min-width: 1024px) {
-    .icons {
-      width: 6%; } }
+  display: inline-block;
+  margin-right: 5px; }
 
 .siteIcons {
   display: none; }
@@ -234,7 +453,11 @@ p {
   background: url(../img/images/closeKnight_02.png);
   background-size: contain;
   background-repeat: no-repeat;
-  padding: 15% 5%; }
+  padding: 10% 5% 15% 5%;
+  margin-top: 250px; }
+  @media screen and (min-width: 900px) {
+    .Events {
+      margin-top: 150px; } }
 
 @media screen and (min-width: 600px) {
   .headerEvents .headerLogo {
@@ -245,7 +468,7 @@ p {
   font-size: 1.2em; }
 
 .eventBox {
-  border: 1px solid #b2afaf;
+  border: 1px solid #5f5d5d;
   margin-top: 50px;
   height: 295px; }
   .eventBox p {
@@ -265,7 +488,7 @@ p {
   float: left;
   width: 20%;
   padding: 2% 4% 2% 17px;
-  border-right: 1px solid #b2afaf; }
+  border-right: 1px solid #5f5d5d; }
 
 .eventTime {
   float: left;
@@ -275,7 +498,7 @@ p {
 .eventInfo {
   clear: both;
   width: 100%;
-  border-top: 1px solid #b2afaf;
+  border-top: 1px solid #5f5d5d;
   padding: 2% 4% 6% 17px; }
   @media screen and (min-width: 900px) {
     .eventInfo {
@@ -303,7 +526,7 @@ p {
       margin: 0 auto; } }
 
 .reoccuringBox {
-  border: 1px solid #b2afaf;
+  border: 1px solid #5f5d5d;
   margin-top: 50px;
   height: 295px; }
   .reoccuringBox p {
@@ -326,88 +549,138 @@ p {
   line-height: 1em; }
 
 /** Onboarding Page **/
-.onboarding {
-  background-image: url(../img/darkWood.jpg);
-  background-position: top;
-  background-size: cover;
-  padding-top: 40px;
-  padding-bottom: 1px; }
-  .onboarding h1 {
-    text-align: center;
-    font-size: 1em; }
-    @media screen and (min-width: 600px) {
-      .onboarding h1 {
-        font-size: 1.5em; } }
-  .onboarding .headerLogo {
-    margin: 0 auto 24% auto; }
-    @media screen and (min-width: 600px) {
-      .onboarding .headerLogo {
-        width: 50%;
-        margin: 0 auto 10% auto; } }
-    @media screen and (min-width: 900px) {
-      .onboarding .headerLogo {
-        width: 30%; } }
-    @media screen and (min-width: 900px) {
-      .onboarding .headerLogo {
-        margin: 0 auto 4% auto; } }
+.onboarding h1 {
+  text-align: center;
+  font-size: 1.3em; }
+  @media screen and (min-width: 600px) {
+    .onboarding h1 {
+      font-size: 1.5em; } }
+.onboarding .headerLogo {
+  position: relative;
+  margin: 0 auto 24% auto;
+  top: 0px;
+  right: 0;
+  width: 100%; }
+  @media screen and (min-width: 600px) {
+    .onboarding .headerLogo {
+      width: 70%;
+      margin: 0 auto 10% auto; } }
+  @media screen and (min-width: 900px) {
+    .onboarding .headerLogo {
+      width: 50%; } }
+  @media screen and (min-width: 1200px) {
+    .onboarding .headerLogo {
+      width: 40%; } }
 
-.line1 {
-  height: 1px;
-  width: 100%;
-  margin-bottom: 5px;
-  background: #b2afaf; }
+.age_verify {
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+  position: relative;
+  z-index: 1000;
+  margin-top: 100px; }
 
-.line2 {
-  height: 1px;
+.ageBox {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10% 5%;
   width: 100%;
-  background: #b2afaf;
-  margin-bottom: 30px; }
-
-.line3 {
-  height: 1px;
-  width: 100%;
-  margin-bottom: 5px;
-  background: #b2afaf; }
-
-.line4 {
-  height: 1px;
-  width: 100%;
-  background: #b2afaf;
-  margin-bottom: 120px; }
+  margin: 0 auto; }
+  @media screen and (min-width: 600px) {
+    .ageBox {
+      width: 75%;
+      padding: 8% 5%; } }
+  @media screen and (min-width: 900px) {
+    .ageBox {
+      width: 50%;
+      padding: 5%; } }
+  @media screen and (min-width: 1200px) {
+    .ageBox {
+      width: 40%;
+      padding: 3%; } }
 
 .yes {
-  margin: 70px auto 0 auto;
-  width: 40%;
+  margin: 30px auto 30px auto;
+  width: 100%;
   font-size: 2em; }
+  @media screen and (min-width: 600px) {
+    .yes {
+      width: 75%; } }
   @media screen and (min-width: 900px) {
     .yes {
-      width: 25%; } }
-  .yes h1 {
-    border: 1px solid white;
-    background: black; }
+      width: 50%; } }
+  @media screen and (min-width: 1200px) {
+    .yes {
+      width: 40%; } }
+  .yes a {
+    border: 1px solid #5f5d5d;
+    background: black;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5% 5%;
+    transition: all 0.5s ease; }
+    .yes a:hover {
+      background: #997f2b; }
 
 .no {
   margin: 0 auto;
-  width: 40%;
+  width: 100%;
   font-size: 2em;
   margin-bottom: 160px; }
   @media screen and (min-width: 600px) {
     .no {
-      margin-bottom: 60px; } }
+      width: 75%; } }
   @media screen and (min-width: 900px) {
     .no {
-      width: 25%;
-      margin-bottom: 100px; } }
+      width: 50%; } }
   @media screen and (min-width: 1200px) {
     .no {
-      margin-bottom: 50px; } }
-  .no h1 {
-    border: 1px solid white;
-    background: black; }
+      width: 40%; } }
+  .no a {
+    border: 1px solid #5f5d5d;
+    background: black;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5% 5%;
+    transition: all 0.5s ease; }
+    .no a:hover {
+      background: #997f2b; }
 
 /** Home Page **/
 .home {
-  padding: 15% 5%; }
+  padding: 15% 5%;
+  margin-top: 150px; }
+  @media screen and (min-width: 900px) {
+    .home {
+      margin-top: 250px; } }
+
+.homepageTitle {
+  position: absolute;
+  z-index: 1000;
+  bottom: 145px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10% 0 10% 0;
+  width: 100%; }
+  .homepageTitle h1 {
+    font-size: 3em;
+    padding: 0 5% 2px 10%; }
+  .homepageTitle h1:first-child {
+    border-bottom: 1px solid #5f5d5d;
+    margin-bottom: 2px; }
+  .homepageTitle h1:last-child {
+    border-top: 1px solid #b2afaf;
+    margin-top: 1px; }
+  .homepageTitle span {
+    font-size: 0.8em; }
+  @media screen and (min-width: 900px) {
+    .homepageTitle {
+      padding: 4% 0 3% 0;
+      bottom: 0; }
+      .homepageTitle h1 {
+        font-size: 3.5em; } }
+  @media screen and (min-width: 1200px) {
+    .homepageTitle {
+      bottom: 0; } }
 
 .findBeerAction {
   background-image: url(../img/images/taps_01.png);
@@ -443,36 +716,83 @@ p {
   background-repeat: no-repeat;
   background-size: cover; }
 
+.callButtonWrapper {
+  width: 90%;
+  margin: 0 auto; }
+
+.callButtons {
+  width: 100%; }
+
 .actions {
-  border: 1px solid #b2afaf;
+  border: 1px solid #5f5d5d;
   height: 220px;
   padding: 8% 0 0 8%;
   margin-bottom: 25px; }
   .actions:hover {
     color: #83c0bf; }
+  @media screen and (min-width: 600px) {
+    .actions {
+      width: 48%;
+      float: left;
+      padding: 3% 0 0 3%; } }
+  @media screen and (min-width: 900px) {
+    .actions h3 {
+      font-size: 1.8em; }
+    .actions .medTitle {
+      font-size: 3.3em; } }
+
+@media screen and (min-width: 600px) {
+  .margin {
+    margin-right: 4%; } }
 
 /** TASTING ROOM PAGE **/
 .tastingroom {
-  padding: 15% 5%;
-  background-image: url(../img/tastingroomMain.png);
+  padding: 20% 5% 15% 5%;
+  background-image: url(../img/pouringBeer.png);
   background-position: top right;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  margin-top: 250px; }
+  @media screen and (min-width: 900px) {
+    .tastingroom {
+      margin-top: 100px; } }
+  @media screen and (min-width: 900px) {
+    .tastingroom {
+      margin-top: 50px; } }
 
 .tastingroomWords {
-  margin: 50px 0 100px 0; }
+  margin: 50px 0 50px 0;
+  background: rgba(0, 0, 0, 0.5);
+  max-width: 225px;
+  padding: 3%; }
   @media screen and (min-width: 447px) {
     .tastingroomWords {
-      margin: 100px 0 100px 0; } }
+      margin: 100px 0 50px 0; } }
   @media screen and (min-width: 900px) {
     .tastingroomWords {
-      margin: 50px 0 50px 0; } }
+      margin: 50px 0 50px 0;
+      max-width: 310px; } }
+  @media screen and (min-width: 1200px) {
+    .tastingroomWords {
+      max-width: 350px; } }
+
+.hourWrapper {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5%;
+  margin-bottom: 200px;
+  width: 325px; }
+  @media screen and (min-width: 600px) {
+    .hourWrapper {
+      width: 350px; } }
+  @media screen and (min-width: 900px) {
+    .hourWrapper {
+      background: none; } }
 
 .hours {
-  border: 1px solid white;
-  width: 275px;
-  margin-bottom: 200px; }
+  border: 1px solid #5f5d5d;
+  width: 275px; }
   .hours p {
-    color: white; }
+    color: white;
+    font-size: 0.8em; }
   @media screen and (min-width: 900px) {
     .hours {
       width: 325px; } }
@@ -485,7 +805,7 @@ p {
 .day {
   float: left;
   width: 40%;
-  border-right: 1px solid white;
+  border-right: 1px solid #5f5d5d;
   padding-left: 2%; }
 
 .hour {
@@ -505,7 +825,7 @@ p {
     line-height: 2em; }
 
 .current {
-  border: 1px solid #b2afaf;
+  border: 1px solid #5f5d5d;
   background: black;
   padding: 5%;
   margin: 10% 5% 0 5%; }
@@ -532,7 +852,6 @@ p {
   padding: 10%; }
 
 .map {
-  border: 5px solid #997f2b;
   padding: 0;
   margin: 0; }
 
@@ -542,13 +861,23 @@ iframe {
 
 /** About Us Page **/
 .aboutus {
-  padding: 10% 5%;
-  background-image: url(../img/images/grayWood_02.png); }
+  padding: 20% 5% 5% 5%;
+  background-image: url(../img/images/grayWood_02.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 182px;
+  margin-top: 200px; }
+  @media screen and (min-width: 900px) {
+    .aboutus {
+      margin-top: 50px; } }
+  @media screen and (min-width: 1200px) {
+    .aboutus {
+      margin-top: 0; } }
 
 .beerMugs {
-  width: 86%;
+  width: 100%;
   float: right;
-  margin: 3% 0 40px 5%; }
+  margin: 7% 0 40px 5%; }
   .beerMugs img {
     width: 100%; }
   @media screen and (min-width: 600px) {
@@ -570,14 +899,14 @@ iframe {
     width: 100%; }
 
 .historyQuote {
-  background-image: url(../img/blackWood.png);
+  background: rgba(153, 127, 43, 0.7);
   background-size: cover;
   background-position: top;
   border-top: 1px solid #b2afaf;
   border-bottom: 1px solid #b2afaf;
   padding: 100px 0;
   text-align: center;
-  font-family: "Caflisch Script Pro", "Oswald", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-size: 2em;
   color: white; }
   @media screen and (min-width: 900px) {
@@ -608,7 +937,7 @@ iframe {
       margin: 30px 5% 5% 0; } }
 
 .thankyou {
-  border-top: 1px solid #b2afaf;
+  border-top: 1px solid #5f5d5d;
   padding-top: 70px; }
   .thankyou h3 {
     margin-bottom: 50px;
@@ -624,9 +953,16 @@ iframe {
   padding: 15% 5%;
   background-image: url(../img/blackWood2.png);
   background-position: center;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  margin-top: 250px; }
   .findourbeers h1 span {
     font-size: 0.8em; }
+  @media screen and (min-width: 900px) {
+    .findourbeers {
+      margin-top: 150px; } }
+  @media screen and (min-width: 1200px) {
+    .findourbeers {
+      margin-top: 100px; } }
 
 form {
   margin: 70px 0; }
@@ -637,7 +973,7 @@ form {
     width: 100%;
     padding: 5% 10%;
     background: black;
-    border: 1px solid white;
+    border: 1px solid #5f5d5d;
     color: #997f2b;
     font-family: "Oswald", sans-serif;
     font-size: 1em;
@@ -668,6 +1004,14 @@ input {
   border: none;
   display: block; }
 
+label {
+  margin: 0 5px; }
+
+.noresults {
+  background: white;
+  color: #a70307;
+  padding: 5%; }
+
 .address {
   width: 45%;
   display: inline-block;
@@ -691,25 +1035,94 @@ input {
       .address p {
         font-size: 0.8em; } }
 
+.addressList li {
+  display: none; }
+  .addressList li:active {
+    display: block; }
+
 /** Our Beers Page **/
+.beers .headerLogo {
+  top: 120px;
+  right: 14%; }
+  @media screen and (min-width: 500px) {
+    .beers .headerLogo {
+      right: 23%;
+      width: 55%; } }
+  @media screen and (min-width: 800px) {
+    .beers .headerLogo {
+      right: 26%;
+      width: 47%; } }
+  @media screen and (min-width: 900px) {
+    .beers .headerLogo {
+      top: 25px;
+      right: 37%;
+      width: 25%; } }
+  @media screen and (min-width: 1024px) {
+    .beers .headerLogo {
+      right: 35%;
+      width: 30%;
+      top: 25px; } }
+  @media screen and (min-width: 1200px) {
+    .beers .headerLogo {
+      right: 39%;
+      width: 22%; } }
+
 .ourbeers {
   padding: 15% 5%;
-  background-image: url(../img/images/beerChartWood_03.png);
-  background-repeat: no-repeat;
-  background-size: cover; }
+  background-image: url(../img/beerChart_03.png);
+  background-size: contain;
+  margin-top: 300px; }
   .ourbeers p {
     line-height: 2em; }
+  @media screen and (min-width: 600px) {
+    .ourbeers {
+      margin-top: 325px; } }
+  @media screen and (min-width: 900px) {
+    .ourbeers {
+      margin-top: 160px; } }
 
-.beerNav li {
-  margin-bottom: 30px; }
+.beerNav {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  background-color: black;
+  padding-top: 5%; }
+  .beerNav ul {
+    text-align: center; }
+  .beerNav li {
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 43%; }
+  @media screen and (min-width: 900px) {
+    .beerNav {
+      float: left;
+      background: none;
+      top: 260px;
+      left: 5%;
+      width: 19%;
+      border-right: 1px solid rgba(153, 127, 43, 0.3);
+      background: rgba(0, 0, 0, 0.2);
+      padding: 2%; }
+      .beerNav ul {
+        text-align: left; }
+      .beerNav li {
+        display: block;
+        width: 100%;
+        margin-bottom: 45px; } }
 
-.beersWrapper {
-  padding-left: 25%; }
+@media screen and (min-width: 900px) {
+  .beersWrapper {
+    float: left;
+    padding-left: 7%;
+    width: 100%;
+    padding-left: 25%; } }
 
 .beerGroup {
-  margin-top: 70px;
-  padding-bottom: 50px;
-  border-bottom: 1px solid #b2afaf; }
+  margin-top: 15px;
+  padding-bottom: 50px; }
+  @media screen and (min-width: 900px) {
+    .beerGroup {
+      margin-top: 0; } }
 
 .beerImage {
   margin-top: 70px;
@@ -723,7 +1136,7 @@ input {
       margin-top: 110px; } }
 
 .beerInfo {
-  border: 1px solid #b2afaf;
+  border: 1px solid #5f5d5d;
   margin: 10px 0 30px 0; }
   @media screen and (min-width: 900px) {
     .beerInfo {
@@ -733,7 +1146,7 @@ input {
 
 .beerTitle {
   padding: 3%;
-  border-bottom: 1px solid #b2afaf; }
+  border-bottom: 1px solid #5f5d5d; }
   .beerTitle .medTitle {
     font-size: 2.5em; }
   .beerTitle h3 {
@@ -756,7 +1169,7 @@ input {
   padding: 3%;
   float: left;
   width: 80%;
-  border-left: 1px solid #b2afaf; }
+  border-left: 1px solid #5f5d5d; }
   .statInfo li {
     margin-bottom: 10px; }
   @media screen and (min-width: 900px) {
@@ -765,12 +1178,12 @@ input {
   @media screen and (min-width: 900px) {
     .statInfo {
       width: 39%;
-      border-right: 1px solid #b2afaf; } }
+      border-right: 1px solid #5f5d5d; } }
 
 .beerQuote {
   padding: 3%;
   clear: both;
-  border-top: 1px solid #b2afaf; }
+  border-top: 1px solid #5f5d5d; }
   @media screen and (min-width: 900px) {
     .beerQuote {
       width: 46%;
@@ -781,5 +1194,10 @@ input {
 @media screen and (min-width: 900px) {
   .beerWords {
     clear: both; } }
+
+.callforFind {
+  border-top: 1px solid #5f5d5d;
+  background: none;
+  padding-top: 50px; }
 
 /*# sourceMappingURL=styles.css.map */
