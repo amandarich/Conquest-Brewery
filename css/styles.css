@@ -80,10 +80,64 @@ p {
       font-size: 1em; } }
 
 /** Common Styles **/
+.hvr-shrink {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.7s;
+  transition-duration: 0.7s;
+  -webkit-transition-property: transform;
+  transition-property: transform; }
+
+.hvr-shrink:hover, .hvr-shrink:focus, .hvr-shrink:active {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9); }
+
+.hvr-grow-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translaeZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform; }
+
+.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1); }
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform; }
+
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1); }
+
 .mainWrapper {
   max-width: 1200px;
-  margin: 0 auto;
-  z-index: 1000; }
+  margin: 0 auto; }
 
 .buttonBox {
   border: 2px solid #5f5d5d;
@@ -135,11 +189,13 @@ p {
 /** header styles**/
 .cb-slideshow,
 .cb-slideshow:after {
+  position: fixed;
   width: 100%;
-  height: 600px;
-  top: 106px;
-  left: 0px;
-  z-index: 0; }
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; }
 
 .onboarding .cb-slideshow,
 .onboarding .cb-slideshow:after {
@@ -150,10 +206,11 @@ p {
 
 .cb-slideshow li span {
   width: 100%;
-  height: 650px;
   position: absolute;
   top: 0px;
   left: 0px;
+  bottom: 0px;
+  right: 0px;
   color: transparent;
   background-size: cover;
   background-position: 50% 50%;
@@ -161,10 +218,6 @@ p {
   opacity: 0;
   z-index: 0;
   animation: imageAnimation 36s linear infinite 0s; }
-  @media screen and (min-width: 900px) {
-    .cb-slideshow li span {
-      height: 700px;
-      top: 100px; } }
 
 .onboarding .cb-slideshow li span {
   height: 100%;
@@ -258,32 +311,30 @@ p {
 @media screen and (max-width: 600px) {
   .cb-slideshow li div h3 {
     font-size: 80px; } }
-.homepage .headerWrapper {
-  height: 500px;
+.homepage {
+  position: relative;
   z-index: 1000; }
 
 .headerLogo {
-  width: 70%;
-  margin: 0 auto;
-  position: absolute;
-  top: 20px;
-  right: 14%; }
-  .headerLogo img {
-    width: 100%; }
+  max-width: 250px;
+  margin: 0 auto; }
   @media screen and (min-width: 600px) {
     .headerLogo {
-      width: 50%;
-      right: 24%; } }
+      max-width: 300px; } }
   @media screen and (min-width: 900px) {
     .headerLogo {
-      width: 25%;
-      top: 25px;
-      right: 37%;
-      z-index: 1000; } }
+      max-width: 250px;
+      z-index: 10000;
+      position: relative; } }
   @media screen and (min-width: 1200px) {
     .headerLogo {
-      width: 22%;
-      right: 39%; } }
+      max-width: 300px; } }
+  .headerLogo img {
+    width: 100%; }
+
+.header_inner {
+  position: relative;
+  z-index: 2000; }
 
 @media screen and (min-width: 900px) {
   .button h5 {
@@ -308,7 +359,8 @@ p {
   border-top: 1px solid #b2afaf;
   border-bottom: 1px solid #b2afaf;
   width: 100%;
-  bottom: 0px; }
+  bottom: 0px;
+  z-index: 1000; }
 @media screen and (min-width: 600px) {
   .headerWrapper ul {
     padding: 5% 0; }
@@ -319,8 +371,7 @@ p {
     background: url(../img/blackWood1.png);
     background-position: center 530px;
     position: absolute;
-    border-top: none;
-    top: 0px;
+    top: -20px;
     width: 100%;
     height: 120px; }
   .headerWrapper ul {
@@ -372,7 +423,10 @@ p {
   background: url(../img/blackWood1.png);
   background-position: center 0;
   background-size: cover;
-  padding: 2% 5% 17% 5%; }
+  padding: 2% 5% 25% 5%; }
+  @media screen and (min-width: 600px) {
+    .footerWrapper {
+      padding: 2% 5% 15% 5%; } }
   @media screen and (min-width: 900px) {
     .footerWrapper {
       padding: 2% 5%; } }
@@ -412,34 +466,88 @@ p {
   margin: 0 auto; }
   @media screen and (min-width: 600px) {
     .footerButton {
-      width: 50%; } }
+      width: 65%; } }
   @media screen and (min-width: 900px) {
     .footerButton {
-      width: 35%; } }
+      width: 50%; } }
   @media screen and (min-width: 1200px) {
     .footerButton {
-      width: 25%; } }
+      width: 35%; } }
+
+.footerNav {
+  margin-top: 10px; }
+  .footerNav ul {
+    text-align: center; }
+  .footerNav li {
+    display: inline-block; }
+  .footerNav li:first-child {
+    margin-right: 2%;
+    padding-right: 2%;
+    border-right: 1px solid #5f5d5d; }
+  .footerNav li:nth-child(2) {
+    margin-right: 2%;
+    padding-right: 2%;
+    border-right: 1px solid #5f5d5d; }
+  .footerNav a {
+    color: white; }
+    .footerNav a:hover {
+      color: #83c0bf; }
 
 .footerNewsletter {
-  border: 2px solid #5f5d5d;
-  padding: 3% 4%;
+  border: 1px solid #5f5d5d;
+  padding: 4% 10%;
   text-align: center;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 10px;
   transition: all 0.5s ease;
   background: black;
   width: 100%; }
-  .footerNewsletter:hover {
-    background: #997f2b; }
-    .footerNewsletter:hover a {
+  .footerNewsletter p {
+    margin: 0;
+    padding: 0;
+    color: #83c0bf;
+    font-size: 0.8em; }
+  .footerNewsletter form {
+    margin: 0;
+    padding: 0; }
+  .footerNewsletter input:first-child {
+    margin: 0;
+    margin-top: 10px;
+    background: #b2afaf;
+    transition: all 0.5s ease;
+    width: 100%; }
+  .footerNewsletter input:last-child {
+    color: #997f2b;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    background: black;
+    border: 1px solid #5f5d5d;
+    transition: all 0.5s ease;
+    padding: 1% 4%;
+    width: 100%; }
+    .footerNewsletter input:last-child:hover {
+      background: #997f2b;
       color: white; }
+  @media screen and (min-width: 600px) {
+    .footerNewsletter {
+      padding: 4% 6%; }
+      .footerNewsletter h5 {
+        font-size: 1.2em; }
+      .footerNewsletter input:first-child {
+        float: left;
+        width: 68%; }
+      .footerNewsletter input:last-child {
+        float: left;
+        width: 30%;
+        margin-left: 2%; } }
 
 .iconBox {
   text-align: center;
   margin: 0 auto; }
   @media screen and (min-width: 900px) {
     .iconBox {
-      clear: both; } }
+      text-align: left; } }
 
 .icons {
   display: inline-block;
@@ -453,11 +561,8 @@ p {
   background: url(../img/images/closeKnight_02.png);
   background-size: contain;
   background-repeat: no-repeat;
-  padding: 10% 5% 15% 5%;
-  margin-top: 250px; }
-  @media screen and (min-width: 900px) {
-    .Events {
-      margin-top: 150px; } }
+  background-position: center 100px;
+  padding: 5% 5% 15% 5%; }
 
 @media screen and (min-width: 600px) {
   .headerEvents .headerLogo {
@@ -549,32 +654,43 @@ p {
   line-height: 1em; }
 
 /** Onboarding Page **/
-.onboarding h1 {
-  text-align: center;
-  font-size: 1.3em; }
-  @media screen and (min-width: 600px) {
-    .onboarding h1 {
-      font-size: 1.5em; } }
-.onboarding .headerLogo {
-  position: relative;
-  margin: 0 auto 24% auto;
-  top: 0px;
-  right: 0;
+.onboarding {
+  max-width: none; }
+  .onboarding h1 {
+    text-align: center;
+    font-size: 1.3em; }
+    @media screen and (min-width: 600px) {
+      .onboarding h1 {
+        font-size: 1.5em; } }
+  .onboarding .headerLogo {
+    position: relative;
+    margin: 0 auto 40% auto;
+    top: 0px;
+    right: 0;
+    width: 100%; }
+    @media screen and (min-width: 600px) {
+      .onboarding .headerLogo {
+        margin: 0 auto 20% auto; } }
+    @media screen and (min-width: 900px) {
+      .onboarding .headerLogo {
+        margin: 0 auto 10% auto; } }
+
+.onboardingAction {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 8% 0 6% 0;
   width: 100%; }
-  @media screen and (min-width: 600px) {
-    .onboarding .headerLogo {
-      width: 70%;
-      margin: 0 auto 10% auto; } }
-  @media screen and (min-width: 900px) {
-    .onboarding .headerLogo {
-      width: 50%; } }
+  .onboardingAction h1 {
+    border-bottom: 1px solid #b2afaf;
+    padding: 3px 5%;
+    font-size: 2.5em;
+    padding-bottom: 10px; }
   @media screen and (min-width: 1200px) {
-    .onboarding .headerLogo {
-      width: 40%; } }
+    .onboardingAction {
+      padding: 6% 0 4% 0; } }
 
 .age_verify {
   margin: 0 auto;
-  width: 70%;
+  width: 100%;
   text-align: center;
   position: relative;
   z-index: 1000;
@@ -599,171 +715,329 @@ p {
       width: 40%;
       padding: 3%; } }
 
-.yes {
-  margin: 30px auto 30px auto;
-  width: 100%;
-  font-size: 2em; }
-  @media screen and (min-width: 600px) {
-    .yes {
-      width: 75%; } }
+.answer {
+  display: inline-block;
+  margin: 0 2%;
+  padding: 0 4% 0 4%;
+  font-size: 4.5em; }
   @media screen and (min-width: 900px) {
-    .yes {
-      width: 50%; } }
-  @media screen and (min-width: 1200px) {
-    .yes {
-      width: 40%; } }
-  .yes a {
-    border: 1px solid #5f5d5d;
-    background: black;
-    text-align: center;
-    font-size: 0.8em;
-    padding: 5% 5%;
-    transition: all 0.5s ease; }
-    .yes a:hover {
-      background: #997f2b; }
-
-.no {
-  margin: 0 auto;
-  width: 100%;
-  font-size: 2em;
-  margin-bottom: 160px; }
-  @media screen and (min-width: 600px) {
-    .no {
-      width: 75%; } }
-  @media screen and (min-width: 900px) {
-    .no {
-      width: 50%; } }
-  @media screen and (min-width: 1200px) {
-    .no {
-      width: 40%; } }
-  .no a {
-    border: 1px solid #5f5d5d;
-    background: black;
-    text-align: center;
-    font-size: 0.8em;
-    padding: 5% 5%;
-    transition: all 0.5s ease; }
-    .no a:hover {
-      background: #997f2b; }
+    .answer {
+      padding: 0 2% 0 2%; } }
 
 /** Home Page **/
-.home {
-  padding: 15% 5%;
-  margin-top: 150px; }
+.header_inner .headerLogo {
+  margin-top: 100px; }
   @media screen and (min-width: 900px) {
-    .home {
-      margin-top: 250px; } }
+    .header_inner .headerLogo {
+      margin-top: 0; } }
+
+.home {
+  padding: 8% 5% 15% 5%;
+  background: rgba(0, 0, 0, 0.7);
+  max-width: none; }
 
 .homepageTitle {
-  position: absolute;
-  z-index: 1000;
-  bottom: 145px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.7);
   padding: 10% 0 10% 0;
-  width: 100%; }
+  width: 100%;
+  margin-top: 150px; }
   .homepageTitle h1 {
-    font-size: 3em;
-    padding: 0 5% 2px 10%; }
+    padding: 3px 5%; }
   .homepageTitle h1:first-child {
     border-bottom: 1px solid #5f5d5d;
-    margin-bottom: 2px; }
+    margin-bottom: 2px;
+    font-size: 2.5em; }
   .homepageTitle h1:last-child {
     border-top: 1px solid #b2afaf;
     margin-top: 1px; }
-  .homepageTitle span {
-    font-size: 0.8em; }
   @media screen and (min-width: 900px) {
     .homepageTitle {
-      padding: 4% 0 3% 0;
-      bottom: 0; }
+      margin: 330px auto 0 auto;
+      padding: 5% 0; }
       .homepageTitle h1 {
         font-size: 3.5em; } }
-  @media screen and (min-width: 1200px) {
-    .homepageTitle {
-      bottom: 0; } }
 
 .findBeerAction {
-  background-image: url(../img/images/taps_01.png);
+  background-image: url(../img/taps_01.png);
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  background-position: center center; }
+  @media screen and (min-width: 900px) {
+    .findBeerAction {
+      float: left;
+      width: 70%;
+      height: 300px; } }
 
 .tastingroomAction {
-  background-image: url(../img/homePouring.png);
+  background-image: url(../img/homepagepouringBeer.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
+  @media screen and (min-width: 900px) {
+    .tastingroomAction {
+      width: 75%;
+      height: 400px;
+      float: left; } }
 
 .beerAction {
-  background-image: url(../img/homeBeers.png);
+  background-image: url(../img/conquestBottles2.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
+  @media screen and (min-width: 900px) {
+    .beerAction {
+      float: left;
+      width: 70%;
+      height: 350px; } }
 
 .eventsAction {
   background-image: url(../img/homeEvents.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
+  @media screen and (min-width: 900px) {
+    .eventsAction {
+      float: left;
+      width: 68%;
+      height: 300px; } }
 
 .locationAction {
   background-image: url(../img/homeLocation.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center; }
+  @media screen and (min-width: 900px) {
+    .locationAction {
+      float: left;
+      width: 32%;
+      height: 300px; }
+      .locationAction h3 {
+        font-size: 3em; }
+      .locationAction span {
+        font-size: 0.5em; } }
 
 .tapAction {
-  background-image: url(../img/homeTap.png);
+  background-image: url(../img/homeTap2.png);
   background-repeat: no-repeat;
   background-size: cover; }
+  @media screen and (min-width: 900px) {
+    .tapAction {
+      float: left;
+      width: 30%;
+      height: 350px; }
+      .tapAction h3 {
+        font-size: 3em; }
+      .tapAction span {
+        font-size: 0.5em; } }
 
-.callButtonWrapper {
-  width: 90%;
-  margin: 0 auto; }
+.hourAction {
+  background-image: url(../img/conquestPeopleN.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+  @media screen and (min-width: 900px) {
+    .hourAction {
+      float: left;
+      width: 25%;
+      height: 400px; }
+      .hourAction h3 {
+        font-size: 3em; }
+      .hourAction span {
+        font-size: 0.5em; } }
 
-.callButtons {
-  width: 100%; }
+.storeAction {
+  background-image: url(../img/brewery.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center; }
+  @media screen and (min-width: 900px) {
+    .storeAction {
+      float: left;
+      width: 30%;
+      height: 300px; }
+      .storeAction h3 {
+        font-size: 3em; }
+      .storeAction span {
+        font-size: 0.5em; } }
 
 .actions {
   border: 1px solid #5f5d5d;
-  height: 220px;
-  padding: 8% 0 0 8%;
-  margin-bottom: 25px; }
-  .actions:hover {
-    color: #83c0bf; }
+  padding: 11% 4%;
+  margin-bottom: 25px;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.5s ease;
+  margin-bottom: 40px;
+  position: relative; }
+  .actions p {
+    font-size: 0.8em; }
   @media screen and (min-width: 600px) {
-    .actions {
-      width: 48%;
-      float: left;
-      padding: 3% 0 0 3%; } }
+    .actions p {
+      font-size: 1em; } }
   @media screen and (min-width: 900px) {
-    .actions h3 {
-      font-size: 1.8em; }
-    .actions .medTitle {
-      font-size: 3.3em; } }
-
-@media screen and (min-width: 600px) {
-  .margin {
-    margin-right: 4%; } }
+    .actions {
+      padding: 2%;
+      margin-bottom: 0; } }
+  .actions .actionWords {
+    padding-right: 25%; }
+  .actions .arrow1 {
+    position: absolute;
+    top: 33%;
+    right: 2%;
+    max-width: 45px;
+    transition: all 0.3s ease; }
+    .actions .arrow1 img {
+      width: 100%; }
+    .actions .arrow1:hover {
+      opacity: 0.5; }
+    @media screen and (min-width: 600px) {
+      .actions .arrow1 {
+        right: 4%;
+        top: 38%; } }
+    @media screen and (min-width: 900px) {
+      .actions .arrow1 {
+        top: 36%;
+        max-width: 65px; } }
+  .actions .arrow2 {
+    position: absolute;
+    top: 22%;
+    right: 2%;
+    max-width: 45px;
+    transition: all 0.3s ease; }
+    .actions .arrow2 img {
+      width: 100%; }
+    .actions .arrow2:hover {
+      opacity: 0.5; }
+    @media screen and (min-width: 600px) {
+      .actions .arrow2 {
+        right: 4%;
+        top: 32%; } }
+    @media screen and (min-width: 900px) {
+      .actions .arrow2 {
+        max-width: 65px;
+        top: 36%; } }
+  .actions .arrow3 {
+    position: absolute;
+    right: 2%;
+    max-width: 45px;
+    transition: all 0.3s ease; }
+    .actions .arrow3 img {
+      width: 100%; }
+    .actions .arrow3:hover {
+      opacity: 0.5; }
+    @media screen and (min-width: 600px) {
+      .actions .arrow3 {
+        right: 4%;
+        top: 36%; } }
+    @media screen and (min-width: 900px) {
+      .actions .arrow3 {
+        max-width: 65px;
+        top: 32%; } }
+  .actions .arrow4 {
+    position: absolute;
+    top: 33%;
+    right: 2%;
+    max-width: 45px;
+    transition: all 0.3s ease; }
+    .actions .arrow4 img {
+      width: 100%; }
+    .actions .arrow4:hover {
+      opacity: 0.5; }
+    @media screen and (min-width: 600px) {
+      .actions .arrow4 {
+        right: 4%;
+        top: 39%; } }
+    @media screen and (min-width: 900px) {
+      .actions .arrow4 {
+        max-width: 65px;
+        top: 32%; } }
+  .actions .arrow5 {
+    position: absolute;
+    top: 33%;
+    right: 2%;
+    max-width: 45px;
+    transition: all 0.3s ease; }
+    .actions .arrow5 img {
+      width: 100%; }
+    .actions .arrow5:hover {
+      opacity: 0.5; }
+    @media screen and (min-width: 600px) {
+      .actions .arrow5 {
+        right: 4%;
+        top: 38%; } }
+    @media screen and (min-width: 900px) {
+      .actions .arrow5 {
+        max-width: 65px;
+        top: 30%; } }
+  .actions .arrow6 {
+    position: absolute;
+    top: 28%;
+    right: 2%;
+    max-width: 45px;
+    transition: all 0.3s ease; }
+    .actions .arrow6 img {
+      width: 100%; }
+    .actions .arrow6:hover {
+      opacity: 0.5; }
+    @media screen and (min-width: 600px) {
+      .actions .arrow6 {
+        right: 4%;
+        top: 32%; } }
+    @media screen and (min-width: 900px) {
+      .actions .arrow6 {
+        max-width: 65px;
+        top: 30%; } }
+  .actions .arrow7 {
+    position: absolute;
+    top: 25%;
+    right: 2%;
+    max-width: 45px;
+    transition: all 0.3s ease; }
+    .actions .arrow7 img {
+      width: 100%; }
+    .actions .arrow7:hover {
+      opacity: 0.5; }
+    @media screen and (min-width: 600px) {
+      .actions .arrow7 {
+        right: 4%;
+        top: 33%; } }
+    @media screen and (min-width: 900px) {
+      .actions .arrow7 {
+        max-width: 65px;
+        top: 30%; } }
+  .actions .arrow8 {
+    position: absolute;
+    top: 30%;
+    right: 2%;
+    max-width: 45px;
+    transition: all 0.3s ease; }
+    .actions .arrow8 img {
+      width: 100%; }
+    .actions .arrow8:hover {
+      opacity: 0.5; }
+    @media screen and (min-width: 600px) {
+      .actions .arrow8 {
+        right: 4%;
+        top: 34%; } }
+    @media screen and (min-width: 900px) {
+      .actions .arrow8 {
+        max-width: 65px;
+        top: 30%; } }
 
 /** TASTING ROOM PAGE **/
 .tastingroom {
-  padding: 20% 5% 15% 5%;
-  background-image: url(../img/pouringBeer.png);
+  padding: 7% 5% 15% 5%;
+  background-image: url(../img/homepagepouringBeer.png);
   background-position: top right;
-  background-repeat: no-repeat;
-  margin-top: 250px; }
+  background-repeat: no-repeat; }
   @media screen and (min-width: 900px) {
     .tastingroom {
-      margin-top: 100px; } }
-  @media screen and (min-width: 900px) {
-    .tastingroom {
-      margin-top: 50px; } }
+      background-position: right -145px; } }
 
 .tastingroomWords {
   margin: 50px 0 50px 0;
   background: rgba(0, 0, 0, 0.5);
-  max-width: 225px;
-  padding: 3%; }
+  max-width: 250px;
+  padding: 4%; }
   @media screen and (min-width: 447px) {
     .tastingroomWords {
       margin: 100px 0 50px 0; } }
@@ -776,8 +1050,6 @@ p {
       max-width: 350px; } }
 
 .hourWrapper {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 5%;
   margin-bottom: 200px;
   width: 325px; }
   @media screen and (min-width: 600px) {
@@ -785,7 +1057,8 @@ p {
       width: 350px; } }
   @media screen and (min-width: 900px) {
     .hourWrapper {
-      background: none; } }
+      background: none;
+      padding: 0; } }
 
 .hours {
   border: 1px solid #5f5d5d;
@@ -817,7 +1090,7 @@ p {
   background: #b2afaf; }
 
 .tap {
-  background-image: url(../img/treeRings2.png);
+  background-image: url(../img/homeTap2.png);
   background-position: center right;
   background-size: cover;
   margin-bottom: 50px; }
@@ -861,18 +1134,16 @@ iframe {
 
 /** About Us Page **/
 .aboutus {
-  padding: 20% 5% 5% 5%;
+  padding: 7% 5% 15% 5%;
   background-image: url(../img/images/grayWood_02.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center 182px;
-  margin-top: 200px; }
-  @media screen and (min-width: 900px) {
-    .aboutus {
-      margin-top: 50px; } }
-  @media screen and (min-width: 1200px) {
-    .aboutus {
-      margin-top: 0; } }
+  background-size: contain;
+  background-position: center top; }
+
+.aboutusTwo {
+  margin-top: 50px;
+  padding: 8% 5% 8% 5%;
+  background-size: contain; }
 
 .beerMugs {
   width: 100%;
@@ -899,22 +1170,21 @@ iframe {
     width: 100%; }
 
 .historyQuote {
-  background: rgba(153, 127, 43, 0.7);
+  background: url(../img/images/Vector-Dark-Background1_01.png);
   background-size: cover;
-  background-position: top;
-  border-top: 1px solid #b2afaf;
-  border-bottom: 1px solid #b2afaf;
-  padding: 100px 0;
+  background-position: center center;
+  border-top: 5px solid #a70307;
+  border-bottom: 5px solid #a70307;
+  padding: 50px 0;
   text-align: center;
-  font-family: "Oswald", sans-serif;
-  font-size: 2em;
-  color: white; }
-  @media screen and (min-width: 900px) {
-    .historyQuote {
-      font-size: 2.3em; } }
-  @media screen and (min-width: 1024px) {
-    .historyQuote {
-      font-size: 2.6em; } }
+  text-transform: uppercase;
+  padding: 5%; }
+  .historyQuote p {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5em;
+    color: white;
+    display: inline-block;
+    margin: 5px 4px 5px 4px; }
 
 .people {
   margin-bottom: 70px; }
@@ -937,8 +1207,11 @@ iframe {
       margin: 30px 5% 5% 0; } }
 
 .thankyou {
-  border-top: 1px solid #5f5d5d;
-  padding-top: 70px; }
+  padding-top: 70px;
+  background: url(../img/images/Vector-Dark-Background1_01.png);
+  background-position: contain;
+  background-position: center top;
+  padding: 5%; }
   .thankyou h3 {
     margin-bottom: 50px;
     text-transform: uppercase; }
@@ -950,19 +1223,12 @@ iframe {
 
 /** Find Our Beers Page **/
 .findourbeers {
-  padding: 15% 5%;
+  padding: 7% 5% 15% 5%;
   background-image: url(../img/blackWood2.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-top: 250px; }
+  background-position: center top;
+  background-repeat: no-repeat; }
   .findourbeers h1 span {
     font-size: 0.8em; }
-  @media screen and (min-width: 900px) {
-    .findourbeers {
-      margin-top: 150px; } }
-  @media screen and (min-width: 1200px) {
-    .findourbeers {
-      margin-top: 100px; } }
 
 form {
   margin: 70px 0; }
@@ -1002,15 +1268,14 @@ input {
   padding: 1%;
   background: #997f2b;
   border: none;
-  display: block; }
+  display: block;
+  border: 1px solid #5f5d5d; }
+  input:hover {
+    background: #b2afaf;
+    border: 1px solid #5f5d5d; }
 
 label {
   margin: 0 5px; }
-
-.noresults {
-  background: white;
-  color: #a70307;
-  padding: 5%; }
 
 .address {
   width: 45%;
@@ -1037,52 +1302,44 @@ label {
 
 .addressList li {
   display: none; }
-  .addressList li:active {
-    display: block; }
+.addressList .active {
+  display: inline-block; }
+
+.no_results {
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid #5f5d5d;
+  color: #a70307;
+  padding: 5%;
+  width: 40%; }
+  .no_results h3 {
+    font-size: 1.5em; }
+  .no_results span {
+    color: white; }
 
 /** Our Beers Page **/
-.beers .headerLogo {
-  top: 120px;
-  right: 14%; }
-  @media screen and (min-width: 500px) {
-    .beers .headerLogo {
-      right: 23%;
-      width: 55%; } }
-  @media screen and (min-width: 800px) {
-    .beers .headerLogo {
-      right: 26%;
-      width: 47%; } }
-  @media screen and (min-width: 900px) {
-    .beers .headerLogo {
-      top: 25px;
-      right: 37%;
-      width: 25%; } }
-  @media screen and (min-width: 1024px) {
-    .beers .headerLogo {
-      right: 35%;
-      width: 30%;
-      top: 25px; } }
-  @media screen and (min-width: 1200px) {
-    .beers .headerLogo {
-      right: 39%;
-      width: 22%; } }
-
 .ourbeers {
   padding: 15% 5%;
   background-image: url(../img/beerChart_03.png);
   background-size: contain;
-  margin-top: 300px; }
+  padding: 5% 5% 15% 5%; }
   .ourbeers p {
     line-height: 2em; }
-  @media screen and (min-width: 600px) {
-    .ourbeers {
-      margin-top: 325px; } }
-  @media screen and (min-width: 900px) {
-    .ourbeers {
-      margin-top: 160px; } }
+
+@media screen and (min-width: 900px) {
+  .beerNav_container {
+    position: absolute;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 0;
+    top: 0;
+    right: 0;
+    left: 0; }
+    .beerNav_container.fixed {
+      position: fixed; } }
 
 .beerNav {
-  position: fixed;
   width: 100%;
   top: 0px;
   background-color: black;
@@ -1095,11 +1352,11 @@ label {
     width: 43%; }
   @media screen and (min-width: 900px) {
     .beerNav {
-      float: left;
+      position: absolute;
       background: none;
-      top: 260px;
-      left: 5%;
-      width: 19%;
+      top: 0;
+      left: 0;
+      width: 240px;
       border-right: 1px solid rgba(153, 127, 43, 0.3);
       background: rgba(0, 0, 0, 0.2);
       padding: 2%; }
@@ -1110,15 +1367,35 @@ label {
         width: 100%;
         margin-bottom: 45px; } }
 
+.below {
+  margin-bottom: 15px;
+  width: 100%;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+12,000000+89,000000+100&amp;0.01+1,1+12,0.99+61,1+89,0+100 */
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 1%, black 12%, rgba(0, 0, 0, 0.99) 61%, black 89%, transparent 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.01)), color-stop(1%, rgba(0, 0, 0, 0.01)), color-stop(12%, black), color-stop(61%, rgba(0, 0, 0, 0.99)), color-stop(89%, black), color-stop(100%, transparent));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 1%, black 12%, rgba(0, 0, 0, 0.99) 61%, black 89%, transparent 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 1%, black 12%, rgba(0, 0, 0, 0.99) 61%, black 89%, transparent 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 1%, black 12%, rgba(0, 0, 0, 0.99) 61%, black 89%, transparent 100%);
+  /* IE10+ */
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.01) 0%, rgba(0, 0, 0, 0.01) 1%, black 12%, rgba(0, 0, 0, 0.99) 61%, black 89%, transparent 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#03000000', endColorstr='#00000000',GradientType=1 );
+  /* IE6-9 */ }
+  @media screen and (min-width: 900px) {
+    .below {
+      display: none; } }
+
 @media screen and (min-width: 900px) {
   .beersWrapper {
-    float: left;
-    padding-left: 7%;
-    width: 100%;
-    padding-left: 25%; } }
+    float: right;
+    padding-left: 0;
+    width: 70%; } }
 
 .beerGroup {
-  margin-top: 15px;
   padding-bottom: 50px; }
   @media screen and (min-width: 900px) {
     .beerGroup {

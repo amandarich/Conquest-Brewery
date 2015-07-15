@@ -28,20 +28,27 @@
 		<header>
 			<div class="headerWrapper">
 
+				<div class="headerImage">
+					
+				</div>
+				
+
 				<div class="headerLogo">
 					<a href="homepage.php">
 						<img src="img/conquest-logo.png">
 					</a>
 				</div>
 				<nav class="main_navigation">
-					<a class="button" href="#">
+					<!-- <a class="button" href="#">
 						<h5>Menu</h5>
-					</a>
+					</a> -->
 						<ul class="clearfix main_nav">
+
 							<li class="left"><a href="homepage.php">HOME</a></li>
 							<li class="left"><a href="tastingroom.php">TASTING ROOM</a></li>
-							<li class="right"><a href="ourbeers.php">OUR BEERS</a></li>
+							<li class="right"><a href="ourbeers.php">OUR BEERS</a></li>			
 							<li class="right"><a href="aboutus.php">ABOUT US</a></li>
+								
 						</ul>
 				</nav>
 

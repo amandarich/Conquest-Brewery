@@ -1,7 +1,8 @@
+//Zip Code search 
 
 $(function () {
 
-	var $items = $( ".retailers" ).find( "li" );
+	var $items = $( ".addressList" ).find( "li" );
 
     $( 'form' ).submit( function( e ) {
 
@@ -24,7 +25,7 @@ $(function () {
 
         	if( count === 0 ){
         		$( ".no_results" ).find( "span" ).html( val );
-        		$( ".no_results" ).show();
+        		$( ".no_results" ).show( );
         	}else{
         		$( ".no_results" ).hide();
         	}

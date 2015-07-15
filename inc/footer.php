@@ -8,7 +8,16 @@
 
 						<p><span>CONQUEST BREWERY</span></br>947 S Stadium Road, Bay 1</br>Columbia, SC 29201</p>
 
-					</div>	
+						
+
+						<ul class="clearfix iconBox">
+							<li class="icons fb"><a href="https://www.facebook.com/profile.php?id=100005538035648&fref=ts"><img src="img/fbIcon.png" alt="FaceBook Icon"></a></li>
+							<li class="icons"><a href="https://twitter.com/ConquestBrewing"><img src="img/twitterIcon.png" alt="Twitter"></a></li>
+						</ul>
+
+					</div>
+
+
 
 					<div class="footerEmail">
 						<p>General Inquiries: 
@@ -19,17 +28,25 @@
 					</div>
 
 				</div>
-
-				<ul class="clearfix iconBox">
-					<li class="icons fb"><a href="https://www.facebook.com/profile.php?id=100005538035648&fref=ts"><img src="img/fbIcon.png" alt="FaceBook Icon"></a></li>
-					<li class="icons"><a href="https://twitter.com/ConquestBrewing"><img src="img/twitterIcon.png" alt="Twitter"></a></li>
-				</ul>
+				
 
 				<div class="footerButton">
 					<div class="footerNewsletter">
-						<a class="input" href="#" class="btn btn-info" role="button">SIGN UP FOR OUR EMAIL NEWLETTER</a>
+						<p>SIGN UP FOR OUR EMAIL NEWLETTER</p>
+						<form class="clearfix">
+							<input type="text" name="email">
+							<input type="submit" value="SUBMIT">
+						</form>
 					</div>
 				</div>
+
+				<nav class="footerNav">
+					<ul>
+						<li><a href="findourbeers.php">FIND OUR BEERS</a></li>
+						<li><a href="events.php">EVENTS</a></li>
+						<li><a href="http://conquestbrewing.storenvy.com/">STORE</a></li>
+					</ul>
+				</nav>
 				
 
 			</div><!--End .footerWrapper div-->

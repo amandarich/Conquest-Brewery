@@ -6,8 +6,8 @@
 
 		<div class="mainWrapper aboutus clearfix">
 
-			<h1><span>About</span></h1>
-			<h1 class="lgTitle">Conquest</h1>
+			<h1><span>ABOUT</span></h1>
+			<h1 class="lgTitle">CONQUEST</h1>
 
 			<div class="beerMugs">
 				<img src="img/peopleConquest.jpeg" alt="">
@@ -23,16 +23,26 @@
 			</div>
 		</div> <!--End .mainWrapper div-->
 
-			<div class="historyQuote">
+		<div class="historyQuote">
+			<!-- <h1>History is Written By the Victor</h1> -->
+			<p>Rebels are we.</p>
+			<p>We refuse your reality.</p>
+			<p>We will not be silenced.</p>
+			<p>We will not be contained.</p>
+			<p>We aim for perfection.</p>
+			<p>We love what we do.</p>
+			<p>We challenge your norms.</p>
+			<p>We test your perception.</p>
+			<p>We believe in complexity.</p>
+			<p>We practice creativity.</p>
+			<p>We strive for approachabilty.</p>
+			<p>We prize balance.</p>
+			<p>We love hops.</p>
+			<p>We live with honor.</p>
+			<p>We brew with integrity.</p>
+		</div>
 
-				<!-- <div class="logoCutout">
-					<img src="img/images/logoCutout_03.png" alt="">
-				</div> -->
-				<h1>History is Written By the Victor</h1>
-
-
-			</div>
-		<div class="mainWrapper aboutus clearfix">
+		<div class="mainWrapper aboutus aboutusTwo clearfix">
 
 			<div class="meetus">
 				<div class="people clearfix">

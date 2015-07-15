@@ -12,7 +12,7 @@
 
 			<div class="tastingroomWords">
 				<h4>No scheduled tours</h4>
-				<p>Come on in and request your tour</br> with a pint of your favorite Conquest beer</p>
+				<p>Come on in and request your tour with a pint of your favorite Conquest beer</p>
 			</div>
 
 			<div class="hourWrapper" id="hours">
