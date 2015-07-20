@@ -80,61 +80,6 @@ p {
       font-size: 1em; } }
 
 /** Common Styles **/
-.hvr-shrink {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px transparent;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-transition-duration: 0.7s;
-  transition-duration: 0.7s;
-  -webkit-transition-property: transform;
-  transition-property: transform; }
-
-.hvr-shrink:hover, .hvr-shrink:focus, .hvr-shrink:active {
-  -webkit-transform: scale(0.9);
-  transform: scale(0.9); }
-
-.hvr-grow-shadow {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: translaeZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px transparent;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: box-shadow, transform;
-  transition-property: box-shadow, transform; }
-
-.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
-  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1); }
-
-.hvr-grow {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  box-shadow: 0 0 1px transparent;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform; }
-
-.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1); }
-
 .mainWrapper {
   max-width: 1200px;
   margin: 0 auto; }
@@ -341,14 +286,12 @@ p {
     display: none; } }
 
 .headerWrapper ul {
-  padding: 8% 0;
+  padding: 2% 0;
   text-align: center; }
 .headerWrapper li {
   text-align: center;
-  margin-bottom: 15px;
-  transition: all 0.5s ease;
   display: inline-block;
-  margin: 0 3%; }
+  margin: 3% 8%; }
 .headerWrapper a {
   color: white; }
   .headerWrapper a:hover {
@@ -361,11 +304,16 @@ p {
   width: 100%;
   bottom: 0px;
   z-index: 1000; }
+@media screen and (min-width: 450px) {
+  .headerWrapper li {
+    margin: 0 3%; }
+  .headerWrapper ul {
+    padding: 8% 0; } }
 @media screen and (min-width: 600px) {
   .headerWrapper ul {
     padding: 5% 0; }
   .headerWrapper li {
-    margin: 0 6%; } }
+    margin: 0 5%; } }
 @media screen and (min-width: 900px) {
   .headerWrapper .main_navigation {
     background: url(../img/blackWood1.png);
@@ -381,7 +329,7 @@ p {
   .headerWrapper li {
     display: inline-block;
     margin-bottom: 0;
-    margin: 0 7%; }
+    margin: 0 5%; }
   .headerWrapper li:nth-child(2) {
     margin-right: 10%; }
   .headerWrapper li:nth-child(3) {
@@ -876,152 +824,173 @@ p {
   @media screen and (min-width: 900px) {
     .actions {
       padding: 2%;
-      margin-bottom: 0; } }
-  .actions .actionWords {
-    padding-right: 25%; }
-  .actions .arrow1 {
-    position: absolute;
-    top: 33%;
-    right: 2%;
-    max-width: 45px;
-    transition: all 0.3s ease; }
-    .actions .arrow1 img {
-      width: 100%; }
-    .actions .arrow1:hover {
-      opacity: 0.5; }
-    @media screen and (min-width: 600px) {
-      .actions .arrow1 {
-        right: 4%;
-        top: 38%; } }
-    @media screen and (min-width: 900px) {
-      .actions .arrow1 {
-        top: 36%;
-        max-width: 65px; } }
-  .actions .arrow2 {
-    position: absolute;
-    top: 22%;
-    right: 2%;
-    max-width: 45px;
-    transition: all 0.3s ease; }
-    .actions .arrow2 img {
-      width: 100%; }
-    .actions .arrow2:hover {
-      opacity: 0.5; }
-    @media screen and (min-width: 600px) {
-      .actions .arrow2 {
-        right: 4%;
-        top: 32%; } }
-    @media screen and (min-width: 900px) {
-      .actions .arrow2 {
-        max-width: 65px;
-        top: 36%; } }
-  .actions .arrow3 {
-    position: absolute;
-    right: 2%;
-    max-width: 45px;
-    transition: all 0.3s ease; }
-    .actions .arrow3 img {
-      width: 100%; }
-    .actions .arrow3:hover {
-      opacity: 0.5; }
-    @media screen and (min-width: 600px) {
-      .actions .arrow3 {
-        right: 4%;
-        top: 36%; } }
-    @media screen and (min-width: 900px) {
-      .actions .arrow3 {
-        max-width: 65px;
-        top: 32%; } }
-  .actions .arrow4 {
-    position: absolute;
-    top: 33%;
-    right: 2%;
-    max-width: 45px;
-    transition: all 0.3s ease; }
-    .actions .arrow4 img {
-      width: 100%; }
-    .actions .arrow4:hover {
-      opacity: 0.5; }
-    @media screen and (min-width: 600px) {
-      .actions .arrow4 {
-        right: 4%;
-        top: 39%; } }
-    @media screen and (min-width: 900px) {
-      .actions .arrow4 {
-        max-width: 65px;
-        top: 32%; } }
-  .actions .arrow5 {
-    position: absolute;
-    top: 33%;
-    right: 2%;
-    max-width: 45px;
-    transition: all 0.3s ease; }
-    .actions .arrow5 img {
-      width: 100%; }
-    .actions .arrow5:hover {
-      opacity: 0.5; }
-    @media screen and (min-width: 600px) {
-      .actions .arrow5 {
-        right: 4%;
-        top: 38%; } }
-    @media screen and (min-width: 900px) {
-      .actions .arrow5 {
-        max-width: 65px;
-        top: 30%; } }
-  .actions .arrow6 {
-    position: absolute;
-    top: 28%;
-    right: 2%;
-    max-width: 45px;
-    transition: all 0.3s ease; }
-    .actions .arrow6 img {
-      width: 100%; }
-    .actions .arrow6:hover {
-      opacity: 0.5; }
-    @media screen and (min-width: 600px) {
-      .actions .arrow6 {
-        right: 4%;
-        top: 32%; } }
-    @media screen and (min-width: 900px) {
-      .actions .arrow6 {
-        max-width: 65px;
-        top: 30%; } }
-  .actions .arrow7 {
-    position: absolute;
-    top: 25%;
-    right: 2%;
-    max-width: 45px;
-    transition: all 0.3s ease; }
-    .actions .arrow7 img {
-      width: 100%; }
-    .actions .arrow7:hover {
-      opacity: 0.5; }
-    @media screen and (min-width: 600px) {
-      .actions .arrow7 {
-        right: 4%;
-        top: 33%; } }
-    @media screen and (min-width: 900px) {
-      .actions .arrow7 {
-        max-width: 65px;
-        top: 30%; } }
-  .actions .arrow8 {
-    position: absolute;
-    top: 30%;
-    right: 2%;
-    max-width: 45px;
-    transition: all 0.3s ease; }
-    .actions .arrow8 img {
-      width: 100%; }
-    .actions .arrow8:hover {
-      opacity: 0.5; }
-    @media screen and (min-width: 600px) {
-      .actions .arrow8 {
-        right: 4%;
-        top: 34%; } }
-    @media screen and (min-width: 900px) {
-      .actions .arrow8 {
-        max-width: 65px;
-        top: 30%; } }
+      margin-bottom: 0; }
+      .actions:hover .actionWords {
+        opacity: 0.4; } }
+
+.actionWords {
+  padding-right: 25%;
+  transition: all 0.5s ease; }
+
+.arrow1 {
+  position: absolute;
+  top: 33%;
+  right: 2%;
+  max-width: 45px;
+  transition: all 0.3s ease; }
+  .arrow1 img {
+    width: 100%; }
+  .arrow1:hover {
+    opacity: 0.5; }
+  @media screen and (min-width: 600px) {
+    .arrow1 {
+      right: 4%;
+      top: 38%; } }
+  @media screen and (min-width: 900px) {
+    .arrow1 {
+      top: 36%;
+      max-width: 65px;
+      display: none; } }
+
+.arrow2 {
+  position: absolute;
+  top: 22%;
+  right: 2%;
+  max-width: 45px;
+  transition: all 0.3s ease; }
+  .arrow2 img {
+    width: 100%; }
+  .arrow2:hover {
+    opacity: 0.5; }
+  @media screen and (min-width: 600px) {
+    .arrow2 {
+      right: 4%;
+      top: 32%; } }
+  @media screen and (min-width: 900px) {
+    .arrow2 {
+      max-width: 65px;
+      top: 36%;
+      display: none; } }
+
+.arrow3 {
+  position: absolute;
+  top: 33%;
+  right: 2%;
+  max-width: 45px;
+  transition: all 0.3s ease; }
+  .arrow3 img {
+    width: 100%; }
+  .arrow3:hover {
+    opacity: 0.5; }
+  @media screen and (min-width: 600px) {
+    .arrow3 {
+      right: 4%;
+      top: 36%; } }
+  @media screen and (min-width: 900px) {
+    .arrow3 {
+      max-width: 65px;
+      top: 32%;
+      display: none; } }
+
+.arrow4 {
+  position: absolute;
+  top: 33%;
+  right: 2%;
+  max-width: 45px;
+  transition: all 0.3s ease; }
+  .arrow4 img {
+    width: 100%; }
+  .arrow4:hover {
+    opacity: 0.5; }
+  @media screen and (min-width: 600px) {
+    .arrow4 {
+      right: 4%;
+      top: 39%; } }
+  @media screen and (min-width: 900px) {
+    .arrow4 {
+      max-width: 65px;
+      top: 32%;
+      display: none; } }
+
+.arrow5 {
+  position: absolute;
+  top: 33%;
+  right: 2%;
+  max-width: 45px;
+  transition: all 0.3s ease; }
+  .arrow5 img {
+    width: 100%; }
+  .arrow5:hover {
+    opacity: 0.5; }
+  @media screen and (min-width: 600px) {
+    .arrow5 {
+      right: 4%;
+      top: 38%; } }
+  @media screen and (min-width: 900px) {
+    .arrow5 {
+      max-width: 65px;
+      top: 30%;
+      display: none; } }
+
+.arrow6 {
+  position: absolute;
+  top: 28%;
+  right: 2%;
+  max-width: 45px;
+  transition: all 0.3s ease; }
+  .arrow6 img {
+    width: 100%; }
+  .arrow6:hover {
+    opacity: 0.5; }
+  @media screen and (min-width: 600px) {
+    .arrow6 {
+      right: 4%;
+      top: 32%; } }
+  @media screen and (min-width: 900px) {
+    .arrow6 {
+      max-width: 65px;
+      top: 30%;
+      display: none; } }
+
+.arrow7 {
+  position: absolute;
+  top: 25%;
+  right: 2%;
+  max-width: 45px;
+  transition: all 0.3s ease; }
+  .arrow7 img {
+    width: 100%; }
+  .arrow7:hover {
+    opacity: 0.5; }
+  @media screen and (min-width: 600px) {
+    .arrow7 {
+      right: 4%;
+      top: 33%; } }
+  @media screen and (min-width: 900px) {
+    .arrow7 {
+      max-width: 65px;
+      top: 30%;
+      display: none; } }
+
+.arrow8 {
+  position: absolute;
+  top: 30%;
+  right: 2%;
+  max-width: 45px;
+  transition: all 0.3s ease; }
+  .arrow8 img {
+    width: 100%; }
+  .arrow8:hover {
+    opacity: 0.5; }
+  @media screen and (min-width: 600px) {
+    .arrow8 {
+      right: 4%;
+      top: 34%; } }
+  @media screen and (min-width: 900px) {
+    .arrow8 {
+      max-width: 65px;
+      top: 30%;
+      display: none; } }
 
 /** TASTING ROOM PAGE **/
 .tastingroom {

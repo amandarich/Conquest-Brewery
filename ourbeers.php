@@ -39,9 +39,9 @@
 						<h5>Menu</h5>
 					</a> -->
 						<ul class="clearfix main_nav">
-							<li class="left"><a href="homepage.php">HOME</a></li>
 							<li class="left"><a href="tastingroom.php">TASTING ROOM</a></li>
-							<li class="right"><a href="ourbeers.php">OUR BEERS</a></li>
+							<li class="right"><a href="ourbeers.php">OUR BEERS</a></li>	
+							<li class="left"><a href="findourbeers.php">FIND OUR BEERS</a></li>		
 							<li class="right"><a href="aboutus.php">ABOUT US</a></li>
 						</ul>
 				</nav>

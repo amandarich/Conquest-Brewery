@@ -81,10 +81,9 @@
 							<h5>Menu</h5>
 						</a> -->
 							<ul class="clearfix main_nav">
-								<li class="left"><a href="#">HOME</a></li>
 								<li class="left"><a href="tastingroom.php">TASTING ROOM</a></li>
-							
-								<li class="right"><a href="ourbeers.php">OUR BEERS</a></li>
+								<li class="right"><a href="ourbeers.php">OUR BEERS</a></li>	
+								<li class="left"><a href="findourbeers.php">FIND OUR BEERS</a></li>		
 								<li class="right"><a href="aboutus.php">ABOUT US</a></li>
 							</ul>
 					</nav>
@@ -133,8 +132,8 @@
 					<a href="tastingroom.php#hours" class="hourAction actions">
 						<div class="actionWords">
 							<h3><span>OUR</span></h3>
+							<h3 class="medTitle">HOURS</h3>
 						</div>
-						<h3 class="medTitle">HOURS</h3>
 						<span class="arrow2">
 							<img src="img/images/arrowRight_03.png" alt="Clickable Arrow">
 						</span>
